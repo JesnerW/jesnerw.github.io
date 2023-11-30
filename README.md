@@ -36,6 +36,10 @@ yarn dev
 
 # bun
 bun run dev
+
+# deploy
+npm run generate
+npm run deploy
 ```
 
 ## Production
