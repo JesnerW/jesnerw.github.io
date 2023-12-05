@@ -1,10 +1,9 @@
 <template>
   <div class="card-resume">
-    <h1>Resume</h1>
     <div class="card-experience">
       <div class="sub-title">
         <Icon name="ph:briefcase" size="30px" class="icon" />
-        <h2>Experience</h2>
+        <h2>Experiencia</h2>
       </div>
       <div class="list circle">
         <h3>Desarrollador Frontend</h3>

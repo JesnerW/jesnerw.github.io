@@ -4,12 +4,15 @@
     <p>
       Mi enfoque principal es entregar soluciones tecnológicas de alta calidad
       que no solo cumplan con las expectativas de los usuarios, sino que las
-      superen. Siempre estoy orientado hacia la mejora profesional y personal,
-      disfruto compartiendo mis conocimientos con mis compañeros ya que el poder
-      de trabajar juntos en una misma dirección hace que alcanzar los objetivos
-      y metas sea de manera más efectiva.
+      superen.
     </p>
-    <h2>Que estoy haciendo</h2>
+    <p>
+      Siempre estoy orientado hacia la mejora profesional y personal, disfruto
+      compartiendo mis conocimientos con mis compañeros, ya que el poder de
+      trabajar juntos en una misma dirección hace que alcanzar los objetivos y
+      metas sea de manera más efectiva.
+    </p>
+    <h2>Lo que hago</h2>
     <div class="cards">
       <div class="card">
         <Icon
@@ -18,16 +21,16 @@
           class="icon"
         />
         <h3>Desarrollo Frontend</h3>
-        Desarrollar aplicaciones web seguras, eficientes y escalables y sistemas
-        de gestión basados ​​en web mediante la escritura de códigos estándar,
-        bien documentados y eficientes.
+        Me enfoco en crear interfaces web seguras, eficientes y atractivas.
+        Escribo código estándar y bien documentado para aplicaciones escalables,
+        priorizando la experiencia del usuario y la seguridad.
       </div>
       <div class="card">
         <Icon name="grommet-icons:services" size="50px" class="icon" />
         <h3>Desarrollo Backend</h3>
-        Desarrollar aplicaciones web seguras, eficientes y escalables y sistemas
-        de gestión basados ​​en web mediante la escritura de códigos estándar,
-        bien documentados y eficientes.
+        Me especializo en la construcción de sistemas potentes y adaptables, mi
+        enfoque se orienta hacia la creación de código meticuloso y bien
+        documentado, enfocado en la seguridad y eficiencia de las aplicaciones.
       </div>
     </div>
   </div>
@@ -43,7 +46,7 @@
   & p {
     margin: 15px 0;
     font-weight: 200;
-    line-height: 1.5;
+    line-height: 1.3;
   }
   .cards {
     display: flex;

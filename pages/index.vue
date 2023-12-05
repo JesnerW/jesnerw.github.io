@@ -1,12 +1,39 @@
 <template>
-  <main>
-    <div class="fondo"><img :src="headerIMG" alt="" /></div>
+  <main class="cursor-container" @mousemove="trackCursor">
+    <div
+      class="cursor-light"
+      :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
+    ></div>
+
+    <div class="options">
+      <div class="language linea">
+        <div class="button-left">
+          <Icon name="circle-flags:es-variant" size="27px" class="icon" />
+        </div>
+        <div class="button-right">
+          <Icon name="circle-flags:us-um" size="27px" class="icon" />
+        </div>
+      </div>
+      <div class="theme linea">
+        <div class="button-left">
+          <Icon name="circum:sun" size="27px" class="icon" />
+        </div>
+        <div class="button-right">
+          <Icon name="ic:baseline-dark-mode" size="27px" class="icon" />
+        </div>
+      </div>
+    </div>
     <div class="container">
       <Perfil />
       <div class="content">
-        <Menu class="menu" @about="about" @contact="contact" @resume="resume" />
+        <Menu
+          class="menu"
+          @about="about"
+          @contact="contact"
+          @experiencia="experiencia"
+        />
         <ContenidoAbout v-show="showContent.about" class="contenido" />
-        <ContenidoResume v-show="showContent.resume" class="contenido" />
+        <ContenidoResume v-show="showContent.experience" class="contenido" />
         <ContenidoContact v-show="showContent.contact" class="contenido" />
       </div>
       <!-- <footer></footer> -->
@@ -15,24 +42,67 @@
 </template>
 
 <script setup lang="ts">
-import headerIMG from "@/assets/header_bg_1x.png";
+const cursorX = ref(0);
+const cursorY = ref(0);
+const trackCursor = (event: MouseEvent) => {
+  cursorX.value = event.pageX;
+  cursorY.value = event.pageY;
+  console.log(cursorX.value, cursorY.value);
+};
 const showContent = ref({
   about: true,
-  resume: false,
+  experience: false,
   contact: false,
 });
 function contact() {
-  showContent.value = { about: false, resume: false, contact: true };
+  showContent.value = { about: false, experience: false, contact: true };
 }
-function resume() {
-  showContent.value = { about: false, resume: true, contact: false };
+function experiencia() {
+  showContent.value = { about: false, experience: true, contact: false };
 }
 function about() {
-  showContent.value = { about: true, resume: false, contact: false };
+  showContent.value = { about: true, experience: false, contact: false };
 }
 </script>
 
 <style scoped>
+.cursor-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.cursor-light {
+  position: fixed;
+  box-shadow: 0 0 100px 35px rgb(42 211 0 / 72%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -50;
+  mix-blend-mode: screen;
+}
+.options {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: flex;
+  gap: 10px;
+  .linea {
+    display: flex;
+  }
+  & :is(.button-left, .button-right) {
+    padding: 12px 18px;
+    cursor: pointer;
+    background-color: var(--backgroud-cards);
+  }
+  .button-left {
+    border-radius: 30px 0 0 30px;
+  }
+  .button-right {
+    border-radius: 0 30px 30px 0;
+  }
+  .icon {
+    color: white;
+  }
+}
 main {
   position: relative;
 }
@@ -44,7 +114,7 @@ footer {
   position: absolute;
   right: 0;
   left: 0;
-  top: 170px;
+  top: 100px;
   max-width: 1100px;
   margin: 0 auto;
   display: flex;

@@ -31,11 +31,11 @@
       <div class="separador"></div>
       <div class="info-2">
         <div class="email">
-          <h4>email</h4>
+          <h4>Correo electrónico</h4>
           <p>{{ info.email }}</p>
         </div>
         <div class="location">
-          <h4>location</h4>
+          <h4>Ubicación</h4>
           <p>{{ info.location }}</p>
         </div>
       </div>

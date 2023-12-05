@@ -2,33 +2,36 @@
   <div class="menu">
     <div class="option" @click="about">
       <Icon name="ep:user" size="40px" class="icon" />
-      <p>about</p>
+      <p>Sobre mi</p>
     </div>
-    <div class="option" @click="resume">
+    <div class="option" @click="experiencia">
       <Icon name="radix-icons:file-text" size="40px" class="icon" />
-      <p>resume</p>
+      <p>experiencia</p>
     </div>
-    <div class="option" @click="contact">
+    <div class="option" @click="projects">
       <Icon name="carbon:ibm-cloud-projects" size="40px" class="icon" />
-      <p>projects</p>
+      <p>Proyectos</p>
     </div>
     <div class="option" @click="contact">
       <Icon name="streamline:contact-phonebook-2" size="40px" class="icon" />
-      <p>contact</p>
+      <p>Contacto</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(["contact", "about", "resume"]);
-function contact() {
-  emit("contact");
-}
-function resume() {
-  emit("resume");
-}
+const emit = defineEmits(["contact", "about", "experiencia", "projects"]);
 function about() {
   emit("about");
+}
+function experiencia() {
+  emit("experiencia");
+}
+function projects() {
+  emit("projects");
+}
+function contact() {
+  emit("contact");
 }
 </script>
 

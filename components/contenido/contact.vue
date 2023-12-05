@@ -2,17 +2,24 @@
   <div class="card-contact">
     <h1>Contact</h1>
     <div class="form">
-      <h2>Formulario de contacto</h2>
+      <p>
+        Estoy buscando oportunidades para colaborar con
+        empresas/agencias/individuos, no solo trabajar para ellos. Quiero
+        aportar mi experiencia en un grupo colectivo donde podamos trabajar
+        juntos para resolver problemas comerciales reales de una manera que
+        optimice toda nuestra experiencia y conocimientos respectivos.
+      </p>
+      <p>No dude en comunicarse a través de este formulario.</p>
       <div class="inputs">
         <input
-          :value="form.from_name"
+          @input="form.from_name = $event.target.value"
           type="text"
           required
           placeholder="Nombre"
           class="input"
         />
         <input
-          :value="form.email_id"
+          @input="form.email_id = $event.target.value"
           type="text"
           required
           placeholder="Correo electrónico"
@@ -20,7 +27,7 @@
         />
       </div>
       <textarea
-        :value="form.message"
+        @input="form.message = $event.target.value"
         required
         placeholder="Mensaje"
         class="input"
@@ -36,18 +43,17 @@
 
 <script setup>
 import axios from "axios";
-import emailjs from "@emailjs/browser";
 const config = useRuntimeConfig();
-const form = {
-  from_name: "Ramirez",
-  email_id: "jesner631@gmail.com",
-  message: "asd",
-};
+const form = ref({
+  from_name: "",
+  email_id: "",
+  message: "",
+});
 var data = {
   service_id: config.public.serviceId,
   template_id: config.public.templateId,
   user_id: config.public.publicKey,
-  template_params: form,
+  template_params: form.value,
 };
 const URL_POST = "https://api.emailjs.com/api/v1.0/email/send";
 async function sendEmail() {
@@ -89,9 +95,12 @@ button {
   }
 }
 .card-contact {
+  font-weight: 300;
   color: white;
+  line-height: 1.3;
   box-sizing: border-box;
   .form {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
