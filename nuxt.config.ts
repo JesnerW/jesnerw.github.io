@@ -13,5 +13,5 @@ export default defineNuxtConfig({
     }
   },
   css: ['./assets/app.css'],
-  modules: ['nuxt-icon']
+  modules: ['nuxt-icon', '@nuxtjs/color-mode'],
 })

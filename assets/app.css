@@ -1,35 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;500;600;700&display=swap");
 :root {
-  --backgroud-cards: #222222;
-  --backgroud-option: #1a1a1a;
-
-  --color-separator: #0a0c0d;
-  --color-text: #f2f2f2;
+  --family-text: "Barlow Condensed";
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Sofia Sans Semi Condensed";
-}
-
-body {
-  min-height: 100vh;
-
-  background: rgb(28, 28, 29);
-  background: radial-gradient(
+.dark-mode body {
+  /*BODY BACKGROUND COLOR*/
+  --body-radial: radial-gradient(
     circle,
     rgba(28, 28, 29, 1) 0%,
     rgba(7, 7, 8, 1) 100%
   );
 
+  /*Paleta*/
+  --dorado: #ffd500;
+
+  /*CARD and MENU*/
+  --background-cards: #222222;
+  --background-option: #2f2f2f;
+
+  /*Icon*/
+  --color-icon: var(--dorado);
+  /* --color-icon: #0d86ff; */
+
+  /*Social*/
+  --color-social: #dadada;
+  /*Social:hover*/
+  --color-social-hover: var(--dorado);
+
+  /*Menu:hover*/
+  --color-menu-hover-text: var(--dorado);
+  --color-menu-hover-icon: var(--dorado);
+  /*Menu:hover:active*/
+  --background-option-active: var(--dorado);
+  --color-menu-active-text: #03071e;
+  --color-menu-active-icon: #03071e;
+
+  /*Perfil*/
+  --color-name: #ffffff;
+  --color-subtitle-perfil: #aaaaaa;
+  --color-text-perfil: #ffffff;
+  --color-line-separator-perfil: #353535;
+
+  /*About*/
+  --color-title-about: #ffffff;
+  --color-text-about: #dadada;
+  --color-line-box-about: #353535;
+  --color-line-box-about-hover: #0d86ff;
+
+  /*Experience*/
+  --color-circle-progress: var(--dorado);
+  --color-line-progress: #33363d;
+  --color-line-box-skill: var(--dorado);
+
+  /*Projects*/
+
+  /*Contact*/
+  --background-button: var(--dorado);
+  --color-text-button: #03071e;
+
+  /*Other*/
+  --weight-skill: 200;
+}
+
+.light-mode body {
+  --body-radial: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgb(184, 184, 184) 110%
+  );
+
+  --background-cards: #ffffff;
+  --background-option: #f7f9fa;
+  --color-separator: #0a0c0d;
+  --color-text: #0a0c0d;
+  --color-title: #0a0c0d;
+
+  --color-icon: #0d86ff;
+  --color-circle-progress: #0d86ff;
+  --color-line-progress: #33363d;
+
+  --color-line-box-about: #0d86ff90;
+
+  --weight-skill: 400;
+}
+
+* {
+  font-family: var(--family-text);
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s ease;
+}
+
+body {
+  min-height: 100vh;
+  background-image: var(--body-radial);
   background-attachment: fixed;
 
   --sb-track-color: #232e33;
   --sb-thumb-color: #5f5f5f;
   --sb-size: 5px;
-
   scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  margin-right: 5px;
 }
 
 body::-webkit-scrollbar {
@@ -44,4 +115,10 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 0px;
+}
+
+@media (min-height: 100vh) {
+  body {
+    margin-right: calc(5px - (100vw - 100%));
+  }
 }

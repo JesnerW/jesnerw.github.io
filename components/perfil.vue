@@ -10,19 +10,19 @@
         <div class="social-icon">
           <Icon
             name="uiw:linkedin"
-            size="27px"
+            size="25px"
             @click="redirection(social.LinkedIn)"
             class="icon"
           />
           <Icon
             name="bi:github"
-            size="27px"
+            size="25px"
             @click="redirection(social.GitHub)"
             class="icon"
           />
           <Icon
             name="cib:hackerrank"
-            size="27px"
+            size="25px"
             @click="redirection(social.Hackerrank)"
             class="icon"
           />
@@ -52,7 +52,7 @@ const social = {
 };
 
 const info = {
-  name: "Jesner Wilian Ramirez Cueva",
+  name: "Jesner Ramirez Cueva",
   profession: "Full Stack Developer",
   email: "jesner631@gmail.com",
   location: "Peru, Barranca",
@@ -67,20 +67,19 @@ function redirection(url: string) {
 .perfil {
   display: flex;
   gap: 20px;
-  background-color: var(--backgroud-cards);
+  background-color: var(--background-cards);
   border-radius: 20px;
   height: 160px;
   width: 100%;
-  padding: 30px;
+  padding: 30px 30px;
   box-sizing: border-box;
   letter-spacing: 0.8px;
-  color: white;
   .photo {
     position: relative;
     top: -70px;
     width: 150px;
     height: 150px;
-    border: 4px var(--backgroud-cards) solid;
+    border: 4px var(--background-cards) solid;
     overflow: hidden;
     border-radius: 20%;
     & img {
@@ -97,10 +96,21 @@ function redirection(url: string) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: var(--color-text);
+      & h1 {
+        font-family: var(--family-text);
+        color: var(--color-name);
+        font-weight: 700;
+        font-size: 40px;
+        text-transform: uppercase;
+        line-height: 0.8;
+      }
       & p {
-        font-weight: 200;
-        margin-bottom: 8px;
-        color: var(--color-text);
+        font-size: 20px;
+        font-family: var(--family-text);
+        color: var(--color-subtitle-perfil);
+        font-weight: 300;
+        margin-top: -4px;
       }
       .social-icon {
         display: flex;
@@ -108,16 +118,16 @@ function redirection(url: string) {
         .icon {
           cursor: pointer;
           transition: 0.3s;
-          color: var(--color-text);
+          color: var(--color-social);
           &:hover {
-            color: rgb(254, 32, 32);
+            color: var(--color-social-hover);
           }
         }
       }
     }
     .separador {
       width: 1px;
-      background-color: var(--color-separator);
+      background-color: var(--color-line-separator-perfil);
       margin: 0 25px;
     }
     .info-2 {
@@ -127,14 +137,20 @@ function redirection(url: string) {
       justify-content: space-between;
       & :is(.email, .location) {
         & h4 {
+          font-size: 20px;
+          margin-bottom: 4px;
+          color: var(--color-subtitle-perfil);
+          font-family: var(--family-text);
           text-transform: uppercase;
           font-weight: 400;
-          margin-bottom: 5px;
-          color: var(--color-text);
+          line-height: 0.9;
         }
         & p {
-          font-weight: 200;
-          color: white;
+          font-size: 20px;
+          color: var(--color-text-perfil);
+          font-family: var(--family-text);
+          font-weight: 300;
+          line-height: 0.9;
         }
       }
     }

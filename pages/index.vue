@@ -15,10 +15,10 @@
         </div>
       </div>
       <div class="theme linea">
-        <div class="button-left">
+        <div class="button-left" @click="themeMode('light')">
           <Icon name="circum:sun" size="27px" class="icon" />
         </div>
-        <div class="button-right">
+        <div class="button-right" @click="themeMode('dark')">
           <Icon name="ic:baseline-dark-mode" size="27px" class="icon" />
         </div>
       </div>
@@ -47,13 +47,18 @@ const cursorY = ref(0);
 const trackCursor = (event: MouseEvent) => {
   cursorX.value = event.pageX;
   cursorY.value = event.pageY;
-  console.log(cursorX.value, cursorY.value);
 };
 const showContent = ref({
   about: true,
   experience: false,
   contact: false,
 });
+const colorMode = useColorMode();
+onMounted(() => {
+  const cssMode = window.localStorage.getItem("cssMode") || "system";
+  colorMode.preference = cssMode;
+});
+
 function contact() {
   showContent.value = { about: false, experience: false, contact: true };
 }
@@ -62,6 +67,10 @@ function experiencia() {
 }
 function about() {
   showContent.value = { about: true, experience: false, contact: false };
+}
+function themeMode(mode: string) {
+  window.localStorage.setItem("cssMode", mode);
+  colorMode.preference = mode;
 }
 </script>
 
@@ -91,7 +100,7 @@ function about() {
   & :is(.button-left, .button-right) {
     padding: 12px 18px;
     cursor: pointer;
-    background-color: var(--backgroud-cards);
+    background-color: var(--background-cards);
   }
   .button-left {
     border-radius: 30px 0 0 30px;
@@ -124,7 +133,7 @@ footer {
     display: flex;
     gap: 30px;
     .menu {
-      background-color: var(--backgroud-cards);
+      background-color: var(--background-cards);
       width: 15%;
       border-radius: 20px;
     }
@@ -132,20 +141,11 @@ footer {
       width: 85%;
       height: 100%;
       border-radius: 20px;
-      background-color: var(--backgroud-cards);
+      background-color: var(--background-cards);
       margin-bottom: 40px;
-      padding: 30px;
+      padding: 18px 30px 30px 30px;
       box-sizing: border-box;
     }
-  }
-}
-.fondo {
-  position: absolute;
-  height: 250px;
-  overflow: hidden;
-  & img {
-    margin-top: -225px;
-    width: 100%;
   }
 }
 </style>

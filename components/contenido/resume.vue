@@ -143,20 +143,22 @@
   margin: 20px 5px 10px 5px;
   padding: 10px 10px;
   border-radius: 20px;
-  border: 1px var(--color-separator) solid;
+  border: 1px var(--color-line-box-skill) solid;
   gap: 5px 15px;
   .skill {
+    font-weight: var(--weight-skill);
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     text-align: center;
-    font-weight: 200;
     box-sizing: border-box;
     border: 1px transparent solid;
     border-radius: 10px;
     padding: 10px 0;
     transition: ease-in-out 0.2s;
+    color: var(--color-text);
     &:hover {
       border: 1px var(--color-text) solid;
     }
@@ -165,45 +167,58 @@
     }
   }
 }
-.icon {
-  color: rgb(255, 255, 255);
-}
+
 .sub-title {
   margin: 12px 0;
   display: flex;
   gap: 10px;
+  & h2 {
+    font-weight: 600;
+    color: var(--color-title);
+    font-size: 28px;
+  }
+  .icon {
+    margin-top: 2px;
+    color: var(--color-icon);
+  }
 }
 .line {
   position: relative;
   &::after {
     position: absolute;
     content: "";
-    background-color: var(--color-text);
+    background-color: var(--color-line-progress);
     width: 1px;
     height: 100%;
-    top: 6px;
+    top: 11px;
     left: 15px;
   }
 }
 .circle {
   position: relative;
   &::before {
+    z-index: 1;
     position: absolute;
     content: "";
-    background-color: var(--color-text);
+    background-color: var(--color-circle-progress);
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    top: 6px;
+    top: 11px;
     left: 10px;
   }
 }
 .list {
   padding-left: 40px;
   line-height: 1.5;
-
+  & h3 {
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--color-title);
+  }
   & p {
-    font-weight: 200;
+    font-weight: 300;
+    font-size: 20px;
     color: var(--color-text);
   }
 }

@@ -1,6 +1,9 @@
 <template>
   <div class="card-contact">
-    <h1>Contact</h1>
+    <div class="sub-title">
+      <Icon name="fluent:contact-card-28-regular" size="30px" class="icon" />
+      <h2>Contact</h2>
+    </div>
     <div class="form">
       <p>
         Estoy buscando oportunidades para colaborar con
@@ -35,7 +38,7 @@
       />
     </div>
     <button @click="sendEmail">
-      <Icon name="mingcute:send-fill" size="30px" class="icon" />
+      <Icon name="mingcute:send-fill" size="25px" class="icon" />
       Enviar mensaje
     </button>
   </div>
@@ -64,16 +67,17 @@ async function sendEmail() {
 <style scoped>
 button {
   margin-top: 20px;
-  background: rgb(0, 26, 255);
-  color: white;
+  background: var(--background-button);
+  color: var(--color-text-button);
   border-radius: 20px;
-  padding: 15px 30px;
+  padding: 13px 25px 15px 25px;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   display: flex;
   gap: 5px;
   align-items: center;
   cursor: pointer;
+  font-weight: 400;
 }
 .input {
   font-weight: 300;
@@ -82,7 +86,7 @@ button {
   background-color: rgba(0, 0, 0, 0.378);
   border-radius: 15px;
   border: 1px solid var(--color-text);
-  font-size: 18px;
+  font-size: 20px;
   box-sizing: border-box;
   width: 100%;
   resize: none;
@@ -104,10 +108,29 @@ button {
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    & p {
+      font-size: 20px;
+      color: var(--color-text);
+    }
   }
   .inputs {
     display: flex;
     gap: 25px;
+  }
+  .sub-title {
+    margin: 12px 0;
+    display: flex;
+    gap: 10px;
+    & h2 {
+      font-weight: 600;
+      color: var(--color-title);
+      font-size: 28px;
+    }
+    .icon {
+      margin-top: 3px;
+      color: var(--color-icon);
+    }
   }
 }
 </style>
