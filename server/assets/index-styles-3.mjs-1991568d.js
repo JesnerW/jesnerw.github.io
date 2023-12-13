@@ -1,0 +1,5 @@
+const about_vue_vue_type_style_index_0_scoped_be803a28_lang = ".card-about[data-v-be803a28]{box-sizing:border-box;letter-spacing:.4px;&>p[data-v-be803a28]{color:var(--color-text-about);font-size:20px;font-weight:300;line-height:1.3;margin:15px 0}.sub-title[data-v-be803a28]{display:flex;gap:10px;margin:12px 0;& h2[data-v-be803a28]{color:var(--color-title-about);font-size:28px;font-weight:600}.icon[data-v-be803a28]{color:var(--color-icon);margin-top:2px}}.cards[data-v-be803a28]{display:flex;gap:25px;margin-top:15px;.card[data-v-be803a28]{border:2px solid var(--color-line-box-about);border-radius:25px;font-weight:200;line-height:1.3;padding:25px;text-align:center;transition:.5s ease;&[data-v-be803a28]:hover{border:2px solid var(--color-line-box-about-hover)}.icon[data-v-be803a28]{color:var(--color-icon)}& h3[data-v-be803a28]{color:var(--color-title-about);font-size:24px;font-weight:500;margin:10px 0}& p[data-v-be803a28]{color:var(--color-text-about);font-size:20px}}}}";
+export {
+  about_vue_vue_type_style_index_0_scoped_be803a28_lang as default
+};
+//# sourceMappingURL=index-styles-3.mjs-1991568d.js.map
