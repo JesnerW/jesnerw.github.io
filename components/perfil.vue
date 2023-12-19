@@ -99,7 +99,7 @@ function redirection(url: string) {
       color: var(--color-text);
       & h1 {
         font-family: var(--family-text);
-        color: var(--color-name);
+        color: var(--name-perfil);
         font-weight: 700;
         font-size: 40px;
         text-transform: uppercase;
@@ -108,7 +108,8 @@ function redirection(url: string) {
       & p {
         font-size: 20px;
         font-family: var(--family-text);
-        color: var(--color-subtitle-perfil);
+        color: var(--subtitle-text-perfil);
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         font-weight: 300;
         margin-top: -4px;
       }
@@ -139,15 +140,16 @@ function redirection(url: string) {
         & h4 {
           font-size: 20px;
           margin-bottom: 4px;
-          color: var(--color-subtitle-perfil);
+          color: var(--subtitle-perfil);
           font-family: var(--family-text);
           text-transform: uppercase;
           font-weight: 400;
           line-height: 0.9;
         }
         & p {
+          text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
           font-size: 20px;
-          color: var(--color-text-perfil);
+          color: var(--subtitle-text-perfil);
           font-family: var(--family-text);
           font-weight: 300;
           line-height: 0.9;

@@ -54,11 +54,12 @@
   box-sizing: border-box;
   letter-spacing: 0.4px;
   & > p {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
     font-size: 20px;
     margin: 15px 0;
     font-weight: 300;
     line-height: 1.3;
-    color: var(--color-text-about);
+    color: var(--text-about);
   }
   .sub-title {
     margin: 12px 0;
@@ -66,7 +67,7 @@
     gap: 10px;
     & h2 {
       font-weight: 600;
-      color: var(--color-title-about);
+      color: var(--title-about);
       font-size: 28px;
     }
     .icon {
@@ -81,13 +82,13 @@
     .card {
       line-height: 1.3;
       font-weight: 200;
-      border: 2px var(--color-line-box-about) solid;
+      border: 2px var(--line-box-about) solid;
       border-radius: 25px;
       text-align: center;
       padding: 25px;
       transition: 0.5s ease;
       &:hover {
-        border: 2px var(--color-line-box-about-hover) solid;
+        border: 2px var(--line-box-about-hover) solid;
       }
       .icon {
         color: var(--color-icon);
@@ -96,10 +97,11 @@
         margin: 10px 0;
         font-weight: 500;
         font-size: 24px;
-        color: var(--color-title-about);
+        color: var(--title-about);
       }
       & p {
-        color: var(--color-text-about);
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+        color: var(--text-about);
         font-size: 20px;
       }
     }

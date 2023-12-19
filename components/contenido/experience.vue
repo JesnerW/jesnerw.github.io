@@ -143,10 +143,11 @@
   margin: 20px 5px 10px 5px;
   padding: 10px 10px;
   border-radius: 20px;
-  border: 1px var(--color-line-box-skill) solid;
+  border: 2px var(--line-box-skill) solid;
   gap: 5px 15px;
   .skill {
-    font-weight: var(--weight-skill);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+    font-weight: 300;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -158,9 +159,9 @@
     border-radius: 10px;
     padding: 10px 0;
     transition: cubic-bezier(0, 0, 0, 1) 2s;
-    color: var(--color-text-experience);
+    color: var(--text-experience);
     &:hover {
-      border: 2px var(--color-line-a-skill) solid;
+      border: 2px var(--line-a-skill) solid;
     }
     & > img {
       width: 55px;
@@ -174,7 +175,7 @@
   gap: 10px;
   & h2 {
     font-weight: 600;
-    color: var(--color-title);
+    color: var(--section-modal-experience);
     font-size: 28px;
   }
   .icon {
@@ -187,7 +188,7 @@
   &::after {
     position: absolute;
     content: "";
-    background-color: var(--color-line-progress);
+    background-color: var(--line-progress);
     width: 1px;
     height: 100%;
     top: 11px;
@@ -200,7 +201,7 @@
     z-index: 1;
     position: absolute;
     content: "";
-    background-color: var(--color-circle-progress);
+    background-color: var(--circle-progress);
     width: 11px;
     height: 11px;
     border-radius: 50%;
@@ -214,16 +215,17 @@
   & h3 {
     font-weight: 400;
     font-size: 22px;
-    color: var(--color-title);
+    color: var(--text-experience);
   }
   & p {
     font-weight: 300;
     font-size: 20px;
-    color: var(--color-text);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+
+    color: var(--text-experience);
   }
 }
 .card-resume {
-  color: white;
   box-sizing: border-box;
   letter-spacing: 0.4px;
 }

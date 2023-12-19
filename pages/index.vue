@@ -17,11 +17,19 @@
         </div>
       </div>
       <div class="theme linea">
-        <div class="button-left" @click="themeMode('light')">
-          <Icon name="circum:sun" size="27px" class="icon" />
+        <div
+          class="button-left"
+          :class="$colorMode.preference === 'light' ? 'active' : ''"
+          @click="themeMode('light')"
+        >
+          <Icon name="circum:sun" size="27px" class="icon-light" />
         </div>
-        <div class="button-right" @click="themeMode('dark')">
-          <Icon name="ic:baseline-dark-mode" size="27px" class="icon" />
+        <div
+          class="button-right"
+          :class="$colorMode.preference === 'dark' ? 'active' : ''"
+          @click="themeMode('dark')"
+        >
+          <Icon name="ic:baseline-dark-mode" size="27px" class="icon-dark" />
         </div>
       </div>
     </div>
@@ -62,9 +70,11 @@ const showContent = ref({
   contact: false,
 });
 const colorMode = useColorMode();
+
 onMounted(() => {
-  const cssMode = window.localStorage.getItem("cssMode") || "system";
-  colorMode.preference = cssMode;
+  console.log(colorMode);
+  const cssMode = localStorage.getItem("cssMode") || "system";
+  colorMode.value = cssMode;
 });
 
 function contact() {
@@ -132,7 +142,7 @@ function themeMode(mode: string) {
   & :is(.button-left, .button-right) {
     padding: 12px 18px;
     cursor: pointer;
-    background-color: var(--background-cards);
+    background-color: var(--background-button-mode);
   }
   .button-left {
     border-radius: 30px 0 0 30px;
@@ -141,7 +151,18 @@ function themeMode(mode: string) {
     border-radius: 0 30px 30px 0;
   }
   .icon {
-    color: white;
+  }
+  .icon-dark {
+    color: var(--icon-dark);
+  }
+  .icon-light {
+    color: var(--icon-light);
+  }
+  .active {
+    background-color: var(--background-color);
+    border: 4px var(--border-color) solid;
+    box-shadow: 0 0 4px var(--border-color);
+    padding: 8px 14px;
   }
 }
 main {

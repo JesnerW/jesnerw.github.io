@@ -143,7 +143,7 @@ function AlertError() {
 button {
   margin-top: 20px;
   background: var(--background-button);
-  color: var(--color-text-button);
+  color: var(--text-button);
   border-radius: 20px;
   padding: 13px 25px 15px 25px;
   border: none;
@@ -156,15 +156,17 @@ button {
 }
 .input {
   font-weight: 300;
-  color: white;
+  color: var(--text-general);
   padding: 15px 20px;
-  background-color: var(--color-background-input);
+  background-color: var(--background-input);
   border-radius: 15px;
-  border: 1px solid var(--color-text-contact);
+  border: 1px solid var(--border-input);
   font-size: 20px;
   box-sizing: border-box;
   width: 100%;
   resize: none;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
   /* Firefox */
   scrollbar-width: auto;
   scrollbar-color: #8f54a0 #ffffff;
@@ -173,13 +175,13 @@ button {
     width: 0px;
   }
   &:focus-visible {
-    outline: 1px solid var(--dorado);
+    outline: 1px solid var(--outline-input);
     background-color: transparent;
   }
 }
 .card-contact {
   font-weight: 300;
-  color: white;
+  color: var(--text-general);
   line-height: 1.3;
   box-sizing: border-box;
   .form {
@@ -189,8 +191,9 @@ button {
     gap: 25px;
 
     & p {
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
       font-size: 20px;
-      color: var(--color-text);
+      color: var(--text-general);
     }
   }
   .inputs {
@@ -203,7 +206,7 @@ button {
     gap: 10px;
     & h2 {
       font-weight: 600;
-      color: var(--color-title);
+      color: var(--section-modal-contact);
       font-size: 28px;
     }
     .icon {

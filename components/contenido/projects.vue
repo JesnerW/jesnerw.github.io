@@ -24,7 +24,7 @@
   gap: 10px;
   & h2 {
     font-weight: 600;
-    color: var(--color-text-title-projects);
+    color: var(--section-modal-project);
     font-size: 28px;
   }
   .icon {
@@ -41,13 +41,13 @@
     width: 100%;
     height: 220px;
     border-radius: 15px;
-    background-color: var(--color-box-project);
+    background-color: var(--box-project);
     /* style text center */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 35px;
-    color: white;
+    color: var(--text-project);
   }
 }
 </style>

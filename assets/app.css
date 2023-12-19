@@ -11,25 +11,23 @@
     rgba(7, 7, 8, 1) 100%
   );
 
-  /*Paleta*/
-  --dorado: #ffd500;
-  --white: #fff;
-  --black: #000;
-  --gray: #484848;
-  --gray-1: #aaa;
-  --gray-2: #dadada;
-  --gray-3: #2f2f2f;
+  /*Option CSS (dark-light)*/
+  --background-button-mode: #222;
+  --icon-dark: #000;
+  --icon-light: #fff;
+  --border-color: rgba(0, 0, 0, 0.3);
+  --background-color: #ffffff;
 
   /*CARD (PERFIL, MENU, CONTENT)*/
   --background-cards: #222222;
 
   /*Icon*/
-  --color-icon: var(--dorado);
+  --color-icon: #ffd500;
 
   /*Social*/
-  --color-social: var(--gray-2);
+  --color-social: #dadada;
   /*Social:hover*/
-  --color-social-hover: var(--dorado);
+  --color-social-hover: #ffd500;
 
   /*Menu*/
   --text-menu: #fff;
@@ -46,36 +44,39 @@
   --icon-menu-active: #000;
 
   /*Perfil*/
-  --color-name: var(--white);
-  --color-subtitle-perfil: var(--gray-1);
-  --color-text-perfil: var(--white);
-  --color-line-separator-perfil: var(--gray);
+  --name-perfil: #fff;
+  --subtitle-perfil: #dadada;
+  --subtitle-text-perfil: #aaa;
+  --color-line-separator-perfil: #484848;
 
   /*About*/
-  --color-title-about: var(--white);
-  --color-text-about: var(--gray-2);
-  --color-line-box-about: var(--gray);
-  --color-line-box-about-hover: var(--dorado);
+  --title-about: #fff;
+  --text-about: #dadada;
+  --line-box-about: #484848;
+  --line-box-about-hover: #ffd500;
 
   /*Experience*/
-  --color-text-experience: var(--white);
-  --color-circle-progress: var(--dorado);
-  --color-line-progress: var(--gray);
-  --color-line-box-skill: var(--gray);
-  --color-line-a-skill: var(--dorado);
+  --section-modal-experience: #fff;
+  --text-experience: #fff;
+  --circle-progress: #ffd500;
+  --line-progress: #484848;
+  --line-box-skill: #484848;
+  --line-a-skill: #ffd500;
 
   /*Projects*/
-  --color-text-title-projects: var(--white);
-  --color-box-project: var(--gray-3);
+  --section-modal-project: #fff;
+  --text-project: #fff;
+  --box-project: #2f2f2f;
 
   /*Contact*/
-  --background-button: var(--dorado);
-  --color-text-button: var(--black);
-  --color-background-input: var(--gray-3);
-  --color-text-contact: var(--gray);
-
-  /*Other*/
-  --weight-skill: 200;
+  --section-modal-contact: #fff;
+  --background-button: #ffd500;
+  --background-input: #2f2f2f;
+  --text-button: #000;
+  --border-input: #484848;
+  --text-contact: #484848;
+  --outline-input: #484848;
+  --text-general: #fff;
 }
 
 .light-mode body {
@@ -84,6 +85,14 @@
     rgb(255, 255, 255) 0%,
     rgb(184, 184, 184) 110%
   );
+
+  /*Option CSS (dark-light)*/
+  --background-button-mode: rgba(255, 255, 255, 0.7);
+  --icon-dark: #151515;
+  --icon-light: #151515;
+  --border-color: #ffd500;
+  --background-color: #ffd500ca;
+
   /*CARD (PERFIL, MENU, CONTENT)*/
   --background-cards: #fff;
 
@@ -91,7 +100,7 @@
   --color-icon: #0d86ff;
 
   /*Social*/
-  --color-social: var(--gray-2);
+  --color-social: rgba(0, 0, 0, 0.8);
 
   /*Social:hover*/
   --color-social-hover: #0d86ff;
@@ -110,8 +119,39 @@
   --text-menu-active: #000;
   --icon-menu-active: #000;
 
-  /*Other*/
-  --weight-skill: 400;
+  /*Perfil*/
+  --name-perfil: rgba(0, 0, 0, 0.85);
+  --subtitle-perfil: rgba(0, 0, 0, 0.65);
+  --subtitle-text-perfil: rgba(0, 0, 0, 85);
+  --color-line-separator-perfil: rgba(0, 0, 0, 0.2);
+
+  /*About*/
+  --title-about: rgba(0, 0, 0, 0.85);
+  --text-about: rgba(0, 0, 0, 85);
+  --line-box-about: rgba(0, 0, 0, 0.2);
+  --line-box-about-hover: #0d86ff;
+
+  /*Experience*/
+  --section-modal-experience: rgba(0, 0, 0, 0.85);
+  --text-experience: rgba(0, 0, 0, 0.85);
+  --circle-progress: #0d86ff;
+  --line-progress: rgba(0, 0, 0, 0.2);
+  --line-box-skill: rgba(0, 0, 0, 0.2);
+  --line-a-skill: #0d86ff;
+
+  /*Projects*/
+  --section-modal-project: rgba(0, 0, 0, 0.85);
+  --text-project: rgba(0, 0, 0, 0.7);
+  --box-project: #eee;
+
+  /*Contact*/
+  --section-modal-contact: rgba(0, 0, 0, 0.85);
+  --background-button: #0d86ff;
+  --background-input: #eee;
+  --text-button: #fff;
+  --border-input: rgba(0, 0, 0, 0.3);
+  --outline-input: rgba(0, 0, 0, 0.4);
+  --text-general: rgba(0, 0, 0, 0.85);
 }
 
 * {
