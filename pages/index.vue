@@ -19,14 +19,18 @@
       <div class="theme linea">
         <div
           class="button-left"
-          :class="$colorMode.preference === 'light' ? 'active' : ''"
+          :class="{
+            active: !$colorMode.unknown && $colorMode.value === 'light',
+          }"
           @click="themeMode('light')"
         >
           <Icon name="circum:sun" size="27px" class="icon-light" />
         </div>
         <div
           class="button-right"
-          :class="$colorMode.preference === 'dark' ? 'active' : ''"
+          :class="{
+            active: !$colorMode.unknown && $colorMode.value === 'dark',
+          }"
           @click="themeMode('dark')"
         >
           <Icon name="ic:baseline-dark-mode" size="27px" class="icon-dark" />
@@ -59,6 +63,8 @@
 <script setup lang="ts">
 const cursorX = ref(0);
 const cursorY = ref(0);
+const colorMode = useColorMode();
+
 const trackCursor = (event: MouseEvent) => {
   cursorX.value = event.pageX;
   cursorY.value = event.pageY - window.scrollY;
@@ -68,13 +74,6 @@ const showContent = ref({
   experience: false,
   projects: false,
   contact: false,
-});
-const colorMode = useColorMode();
-
-onMounted(() => {
-  console.log(colorMode);
-  const cssMode = localStorage.getItem("cssMode") || "system";
-  colorMode.value = cssMode;
 });
 
 function contact() {
