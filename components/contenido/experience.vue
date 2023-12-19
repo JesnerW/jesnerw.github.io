@@ -154,13 +154,13 @@
     gap: 5px;
     text-align: center;
     box-sizing: border-box;
-    border: 1px transparent solid;
+    border: 2px transparent solid;
     border-radius: 10px;
     padding: 10px 0;
-    transition: ease-in-out 0.2s;
-    color: var(--color-text);
+    transition: cubic-bezier(0, 0, 0, 1) 2s;
+    color: var(--color-text-experience);
     &:hover {
-      border: 1px var(--color-text) solid;
+      border: 2px var(--color-line-a-skill) solid;
     }
     & > img {
       width: 55px;

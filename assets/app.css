@@ -13,50 +13,66 @@
 
   /*Paleta*/
   --dorado: #ffd500;
+  --white: #fff;
+  --black: #000;
+  --gray: #484848;
+  --gray-1: #aaa;
+  --gray-2: #dadada;
+  --gray-3: #2f2f2f;
 
-  /*CARD and MENU*/
+  /*CARD (PERFIL, MENU, CONTENT)*/
   --background-cards: #222222;
-  --background-option: #2f2f2f;
 
   /*Icon*/
   --color-icon: var(--dorado);
-  /* --color-icon: #0d86ff; */
 
   /*Social*/
-  --color-social: #dadada;
+  --color-social: var(--gray-2);
   /*Social:hover*/
   --color-social-hover: var(--dorado);
 
+  /*Menu*/
+  --text-menu: #fff;
+  --border-option-menu: #2f2f2f;
+  --background-option-menu: #2f2f2f;
   /*Menu:hover*/
-  --color-menu-hover-text: var(--dorado);
-  --color-menu-hover-icon: var(--dorado);
+  --text-menu-hover: #ffd500;
+  --icon-menu-hover: #ffd500;
+  --border-menu-hover: #ffd500;
   /*Menu:hover:active*/
-  --background-option-active: var(--dorado);
-  --color-menu-active-text: #03071e;
-  --color-menu-active-icon: #03071e;
+  --border-menu-active: #ffd500;
+  --background-menu-active: #ffd500;
+  --text-menu-active: #000;
+  --icon-menu-active: #000;
 
   /*Perfil*/
-  --color-name: #ffffff;
-  --color-subtitle-perfil: #aaaaaa;
-  --color-text-perfil: #ffffff;
-  --color-line-separator-perfil: #353535;
+  --color-name: var(--white);
+  --color-subtitle-perfil: var(--gray-1);
+  --color-text-perfil: var(--white);
+  --color-line-separator-perfil: var(--gray);
 
   /*About*/
-  --color-title-about: #ffffff;
-  --color-text-about: #dadada;
-  --color-line-box-about: #353535;
-  --color-line-box-about-hover: #0d86ff;
+  --color-title-about: var(--white);
+  --color-text-about: var(--gray-2);
+  --color-line-box-about: var(--gray);
+  --color-line-box-about-hover: var(--dorado);
 
   /*Experience*/
+  --color-text-experience: var(--white);
   --color-circle-progress: var(--dorado);
-  --color-line-progress: #33363d;
-  --color-line-box-skill: var(--dorado);
+  --color-line-progress: var(--gray);
+  --color-line-box-skill: var(--gray);
+  --color-line-a-skill: var(--dorado);
 
   /*Projects*/
+  --color-text-title-projects: var(--white);
+  --color-box-project: var(--gray-3);
 
   /*Contact*/
   --background-button: var(--dorado);
-  --color-text-button: #03071e;
+  --color-text-button: var(--black);
+  --color-background-input: var(--gray-3);
+  --color-text-contact: var(--gray);
 
   /*Other*/
   --weight-skill: 200;
@@ -68,19 +84,33 @@
     rgb(255, 255, 255) 0%,
     rgb(184, 184, 184) 110%
   );
+  /*CARD (PERFIL, MENU, CONTENT)*/
+  --background-cards: #fff;
 
-  --background-cards: #ffffff;
-  --background-option: #f7f9fa;
-  --color-separator: #0a0c0d;
-  --color-text: #0a0c0d;
-  --color-title: #0a0c0d;
-
+  /*Icon*/
   --color-icon: #0d86ff;
-  --color-circle-progress: #0d86ff;
-  --color-line-progress: #33363d;
 
-  --color-line-box-about: #0d86ff90;
+  /*Social*/
+  --color-social: var(--gray-2);
 
+  /*Social:hover*/
+  --color-social-hover: #0d86ff;
+
+  /*Menu*/
+  --text-menu: #282828;
+  --border-option-menu: #eee;
+  --background-option-menu: #eee;
+  /*Menu:hover*/
+  --text-menu-hover: #000;
+  --icon-menu-hover: #000;
+  --border-menu-hover: #ffd500;
+  /*Menu:hover:active*/
+  --border-menu-active: #ffd500;
+  --background-menu-active: #ffd500ca;
+  --text-menu-active: #000;
+  --icon-menu-active: #000;
+
+  /*Other*/
   --weight-skill: 400;
 }
 

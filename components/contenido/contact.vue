@@ -15,14 +15,14 @@
       <p>No dude en comunicarse a través de este formulario.</p>
       <div class="inputs">
         <input
-          @input="form.from_name = $event.target.value"
+          v-model="form.from_name"
           type="text"
           required
           placeholder="Nombre"
           class="input"
         />
         <input
-          @input="form.email_id = $event.target.value"
+          v-model="form.email_id"
           type="text"
           required
           placeholder="Correo electrónico"
@@ -30,7 +30,7 @@
         />
       </div>
       <textarea
-        @input="form.message = $event.target.value"
+        v-model="form.message"
         required
         placeholder="Mensaje"
         class="input"
@@ -41,30 +41,105 @@
       <Icon name="mingcute:send-fill" size="25px" class="icon" />
       Enviar mensaje
     </button>
+
+    <div class="content-alert" :class="showAlert ? 'alert-enter' : ''">
+      <div class="alert" :class="showAlert ? 'alert-enter' : ''">
+        {{ messageAlert }}
+        <button @click="showAlert = false">Cerrar</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
+
 const config = useRuntimeConfig();
+const showAlert = ref(false);
 const form = ref({
   from_name: "",
   email_id: "",
   message: "",
 });
+const messageAlert = ref("");
+
 var data = {
   service_id: config.public.serviceId,
   template_id: config.public.templateId,
-  user_id: config.public.publicKey,
+  user_id: config.public.publicKeyoi,
   template_params: form.value,
 };
+
 const URL_POST = "https://api.emailjs.com/api/v1.0/email/send";
+
 async function sendEmail() {
-  await axios.post(URL_POST, data);
+  try {
+    await axios.post(URL_POST, data);
+    AlertSuccess();
+  } catch (error) {
+    AlertError();
+  }
+}
+
+function limpiarCampos() {
+  form.value.from_name = "";
+  form.value.email_id = "";
+  form.value.message = "";
+}
+
+function AlertSuccess() {
+  limpiarCampos();
+  messageAlert.value = "Mensaje enviado satisfactoriamente";
+  showAlert.value = true;
+}
+
+function AlertError() {
+  limpiarCampos();
+  messageAlert.value =
+    "Hubo un problema al enviar el mensaje, intente usar otro método de contacto por favor";
+  showAlert.value = true;
 }
 </script>
 
 <style scoped>
+.alert-enter {
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
+.alert-out {
+  opacity: 0 !important;
+  z-index: -999 !important;
+}
+.content-alert {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.1s ease-in-out;
+  .alert {
+    background: white;
+    color: black;
+    font-size: 20px;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+    text-align: center;
+    padding: 20px;
+  }
+}
 button {
   margin-top: 20px;
   background: var(--background-button);
@@ -83,9 +158,9 @@ button {
   font-weight: 300;
   color: white;
   padding: 15px 20px;
-  background-color: rgba(0, 0, 0, 0.378);
+  background-color: var(--color-background-input);
   border-radius: 15px;
-  border: 1px solid var(--color-text);
+  border: 1px solid var(--color-text-contact);
   font-size: 20px;
   box-sizing: border-box;
   width: 100%;
@@ -96,6 +171,10 @@ button {
   /* Chrome, Edge, and Safari */
   &::-webkit-scrollbar {
     width: 0px;
+  }
+  &:focus-visible {
+    outline: 1px solid var(--dorado);
+    background-color: transparent;
   }
 }
 .card-contact {

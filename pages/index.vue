@@ -1,9 +1,11 @@
 <template>
-  <main class="cursor-container" @mousemove="trackCursor">
-    <div
-      class="cursor-light"
-      :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
-    ></div>
+  <main @mousemove="trackCursor">
+    <div class="cursor-container">
+      <div
+        class="cursor-light"
+        :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
+      ></div>
+    </div>
 
     <div class="options">
       <div class="language linea">
@@ -31,9 +33,14 @@
           @about="about"
           @contact="contact"
           @experiencia="experiencia"
+          @projects="projects"
         />
         <ContenidoAbout v-show="showContent.about" class="contenido" />
-        <ContenidoResume v-show="showContent.experience" class="contenido" />
+        <ContenidoExperience
+          v-show="showContent.experience"
+          class="contenido"
+        />
+        <ContenidoProjects v-show="showContent.projects" class="contenido" />
         <ContenidoContact v-show="showContent.contact" class="contenido" />
       </div>
       <!-- <footer></footer> -->
@@ -46,11 +53,12 @@ const cursorX = ref(0);
 const cursorY = ref(0);
 const trackCursor = (event: MouseEvent) => {
   cursorX.value = event.pageX;
-  cursorY.value = event.pageY;
+  cursorY.value = event.pageY - window.scrollY;
 };
 const showContent = ref({
   about: true,
   experience: false,
+  projects: false,
   contact: false,
 });
 const colorMode = useColorMode();
@@ -60,13 +68,36 @@ onMounted(() => {
 });
 
 function contact() {
-  showContent.value = { about: false, experience: false, contact: true };
+  showContent.value = {
+    about: false,
+    experience: false,
+    contact: true,
+    projects: false,
+  };
 }
 function experiencia() {
-  showContent.value = { about: false, experience: true, contact: false };
+  showContent.value = {
+    about: false,
+    experience: true,
+    contact: false,
+    projects: false,
+  };
+}
+function projects() {
+  showContent.value = {
+    about: false,
+    experience: false,
+    contact: false,
+    projects: true,
+  };
 }
 function about() {
-  showContent.value = { about: true, experience: false, contact: false };
+  showContent.value = {
+    about: true,
+    experience: false,
+    contact: false,
+    projects: false,
+  };
 }
 function themeMode(mode: string) {
   window.localStorage.setItem("cssMode", mode);
@@ -76,8 +107,9 @@ function themeMode(mode: string) {
 
 <style scoped>
 .cursor-container {
-  position: relative;
-  min-height: 100vh;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
 }
 
 .cursor-light {
@@ -123,7 +155,7 @@ footer {
   position: absolute;
   right: 0;
   left: 0;
-  top: 100px;
+  top: 78px;
   max-width: 1100px;
   margin: 0 auto;
   display: flex;

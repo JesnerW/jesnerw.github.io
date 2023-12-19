@@ -78,7 +78,7 @@ function contact() {
 
 <style scoped>
 .menu {
-  color: white;
+  color: var(--text-menu);
   padding: 25px;
   height: 100%;
   box-sizing: border-box;
@@ -89,47 +89,46 @@ function contact() {
   .option {
     width: 100%;
     height: 100px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: var(--background-option);
+    background-color: var(--background-option-menu);
+    border: 2px var(--border-option-menu) solid;
     border-radius: 20px;
     cursor: pointer;
     &:hover {
+      border: 2px var(--border-menu-hover) solid;
+
       & p {
-        color: var(--color-menu-hover-text);
+        color: var(--text-menu-hover);
       }
       .icon {
-        color: var(--color-menu-hover-icon);
+        color: var(--icon-menu-hover);
       }
     }
     & p {
       font-family: var(--family-text);
       font-weight: 400;
       font-size: 18px;
-      color: var(--color-title);
+      color: var(--text-menu);
       text-transform: uppercase;
     }
     .icon {
-      color: var(--color-title);
+      color: var(--text-menu);
     }
   }
   .active {
-    background-color: var(--background-option-active);
-    & p {
-      color: var(--color-menu-active-text);
-    }
-    .icon {
-      color: var(--color-menu-active-icon);
+    border: 2px var(--border-menu-active) solid;
+    background-color: var(--background-menu-active);
+    & :is(p, .icon) {
+      color: var(--text-menu-active);
     }
     &:hover {
-      & p {
-        color: var(--color-menu-active-text);
-      }
-      .icon {
-        color: var(--color-menu-active-icon);
+      & :is(p, .icon) {
+        color: var(--text-menu-active);
       }
     }
   }
