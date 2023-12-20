@@ -6,7 +6,7 @@
       @click="about"
     >
       <Icon name="ep:user" size="40px" class="icon" />
-      <p>Sobre mi</p>
+      <p>{{ EN ? "About" : "Sobre mi" }}</p>
     </div>
     <div
       class="option"
@@ -14,7 +14,7 @@
       @click="experiencia"
     >
       <Icon name="radix-icons:file-text" size="40px" class="icon" />
-      <p>experiencia</p>
+      <p>{{ EN ? "Experience" : "Experiencia" }}</p>
     </div>
     <div
       class="option"
@@ -22,7 +22,7 @@
       @click="projects"
     >
       <Icon name="carbon:ibm-cloud-projects" size="40px" class="icon" />
-      <p>Proyectos</p>
+      <p>{{ EN ? "Projects" : "Proyectos" }}</p>
     </div>
     <div
       class="option"
@@ -30,13 +30,19 @@
       @click="contact"
     >
       <Icon name="streamline:contact-phonebook-2" size="40px" class="icon" />
-      <p>Contacto</p>
+      <p>{{ EN ? "Contact" : "Contacto" }}</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const EN = ref(true);
+const props = defineProps(["Language"]);
 const emit = defineEmits(["contact", "about", "experiencia", "projects"]);
+
+watch(props, () => {
+  EN.value = props.Language;
+});
 
 const menu = {
   about: true,

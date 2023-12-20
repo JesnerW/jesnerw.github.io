@@ -3,16 +3,29 @@
     <div class="cursor-container">
       <div
         class="cursor-light"
-        :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
+        :style="{
+          left: cursorX + 'px',
+          top: cursorY + 'px',
+          opacity: cursorVisible ? 1 : 0,
+          transition: 'opacity 0.3s ease-in-out',
+        }"
       ></div>
     </div>
 
     <div class="options">
       <div class="language linea">
-        <div class="button-left">
+        <div
+          class="button-left"
+          :class="{ active: !EN && !loading }"
+          @click="languageMode('ES')"
+        >
           <Icon name="circle-flags:es-variant" size="27px" class="icon" />
         </div>
-        <div class="button-right">
+        <div
+          class="button-right"
+          :class="{ active: EN && !loading }"
+          @click="languageMode('EN')"
+        >
           <Icon name="circle-flags:us-um" size="27px" class="icon" />
         </div>
       </div>
@@ -38,7 +51,7 @@
       </div>
     </div>
     <div class="container">
-      <Perfil />
+      <Perfil :-language="EN" />
       <div class="content">
         <Menu
           class="menu"
@@ -46,14 +59,28 @@
           @contact="contact"
           @experiencia="experiencia"
           @projects="projects"
+          :-language="EN"
         />
-        <ContenidoAbout v-show="showContent.about" class="contenido" />
+        <ContenidoAbout
+          v-show="showContent.about"
+          class="contenido"
+          :-language="EN"
+        />
         <ContenidoExperience
           v-show="showContent.experience"
           class="contenido"
+          :-language="EN"
         />
-        <ContenidoProjects v-show="showContent.projects" class="contenido" />
-        <ContenidoContact v-show="showContent.contact" class="contenido" />
+        <ContenidoProjects
+          v-show="showContent.projects"
+          class="contenido"
+          :-language="EN"
+        />
+        <ContenidoContact
+          v-show="showContent.contact"
+          class="contenido"
+          :-language="EN"
+        />
       </div>
       <!-- <footer></footer> -->
     </div>
@@ -61,14 +88,39 @@
 </template>
 
 <script setup lang="ts">
+const EN = ref(); //mode english
+const loading = ref(true);
+const colorMode = useColorMode();
 const cursorX = ref(0);
 const cursorY = ref(0);
-const colorMode = useColorMode();
+const cursorVisible = ref(true);
 
 const trackCursor = (event: MouseEvent) => {
-  cursorX.value = event.pageX;
-  cursorY.value = event.pageY - window.scrollY;
+  cursorX.value = event.clientX;
+  cursorY.value = event.clientY;
+  cursorVisible.value = true;
 };
+onMounted(() => {
+  const Language = window.localStorage.getItem("LANG");
+  if (!Language) {
+    EN.value = true;
+    window.localStorage.setItem("LANG", "EN");
+  } else {
+    if (Language === "EN") {
+      EN.value = true;
+    } else if (Language === "ES") {
+      EN.value = false;
+    } else {
+      EN.value = true;
+      window.localStorage.setItem("LANG", "EN");
+    }
+  }
+  window.addEventListener("mouseout", () => {
+    cursorVisible.value = false;
+  });
+  loading.value = false;
+});
+
 const showContent = ref({
   about: true,
   experience: false,
@@ -109,8 +161,16 @@ function about() {
   };
 }
 function themeMode(mode: string) {
-  window.localStorage.setItem("cssMode", mode);
   colorMode.preference = mode;
+}
+function languageMode(mode: string) {
+  if (mode === "EN") {
+    EN.value = true;
+    window.localStorage.setItem("LANG", "EN");
+  } else {
+    EN.value = false;
+    window.localStorage.setItem("LANG", "ES");
+  }
 }
 </script>
 

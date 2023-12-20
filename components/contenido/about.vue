@@ -2,22 +2,27 @@
   <div class="card-about">
     <div class="sub-title">
       <Icon name="mdi:about" size="30px" class="icon" />
-      <h2>Sobre mi</h2>
+      <h2>{{ EN ? "About" : "Sobre mi" }}</h2>
     </div>
     <p>
-      Mi enfoque principal es entregar soluciones tecnológicas de alta calidad
-      que no solo cumplan con las expectativas de los usuarios, sino que las
-      superen.
+      {{
+        EN
+          ? "My main focus is to deliver high quality technology solutions that not only meet user expectations, but exceed them."
+          : "Mi enfoque principal es entregar soluciones tecnológicas de alta calidad que no solo cumplan con las expectativas de los usuarios, sino que las superen."
+      }}
     </p>
     <p>
-      Siempre estoy orientado hacia la mejora profesional y personal, disfruto
-      compartiendo mis conocimientos con mis compañeros, ya que el poder de
-      trabajar juntos en una misma dirección hace que alcanzar los objetivos y
-      metas sea de manera más efectiva.
+      {{
+        EN
+          ? "I am always oriented towards professional and personal improvement, I enjoy sharing my knowledge with my colleagues. sharing my knowledge with my colleagues, as the power of working together in the same working together in the same direction makes reaching the objectives and goals more goals more effectively."
+          : "Siempre estoy orientado hacia la mejora profesional y personal, disfruto compartiendo mis conocimientos con mis compañeros, ya que el poder de trabajar juntos en una misma dirección hace que alcanzar los objetivos y metas sea de manera más efectiva."
+      }}
     </p>
     <div class="sub-title">
       <Icon name="eos-icons:job" size="30px" class="icon" />
-      <h2>Lo que hago</h2>
+      <h2>
+        {{ EN ? "What I'm Doing" : "Lo que hago" }}
+      </h2>
     </div>
     <div class="cards">
       <div class="card">
@@ -26,28 +31,37 @@
           size="50px"
           class="icon"
         />
-        <h3>Desarrollo Frontend</h3>
+        <h3>{{ EN ? "Frontend Development" : "Desarrollo Frontend" }}</h3>
         <p>
-          Me enfoco en crear interfaces web seguras, eficientes y atractivas.
-          Escribo código estándar y bien documentado para aplicaciones
-          escalables, priorizando la experiencia del usuario y la seguridad.
+          {{
+            EN
+              ? "I focus on creating secure, efficient and attractive web interfaces. I write standard and well-documented code for scalable applications, prioritizing user experience and security."
+              : "Me enfoco en crear interfaces web seguras, eficientes y atractivas. Escribo código estándar y bien documentado para aplicaciones escalables, priorizando la experiencia del usuario y la seguridad."
+          }}
         </p>
       </div>
       <div class="card">
         <Icon name="grommet-icons:services" size="50px" class="icon" />
-        <h3>Desarrollo Backend</h3>
+        <h3>{{ EN ? "Backend Development" : "Desarrollo Backend" }}</h3>
         <p>
-          Me especializo en la construcción de sistemas potentes y adaptables,
-          mi enfoque se orienta hacia la creación de código meticuloso y bien
-          documentado, enfocado en la seguridad y eficiencia de las
-          aplicaciones.
+          {{
+            EN
+              ? "I specialize in building powerful and adaptable systems, my approach is oriented towards the creation of meticulous and ell-documented code, focused on the security and efficiency of the applications."
+              : "Me especializo en la construcción de sistemas potentes y adaptables, mi enfoque se orienta hacia la creación de código meticuloso y bien documentado, enfocado en la seguridad y eficiencia de las aplicaciones."
+          }}
         </p>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const EN = ref(true);
+const props = defineProps(["Language"]);
+watch(props, () => {
+  EN.value = props.Language;
+});
+</script>
 
 <style scoped>
 .card-about {

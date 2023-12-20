@@ -2,20 +2,26 @@
   <div class="card-project">
     <div class="sub-title">
       <Icon name="octicon:project-symlink-24" size="30px" class="icon" />
-      <h2>Projects</h2>
+      <h2>{{ EN ? "Projects" : "Proyectos" }}</h2>
     </div>
     <div class="list-projects">
-      <div class="project">In Development</div>
-      <div class="project">In Development</div>
-      <div class="project">In Development</div>
-      <div class="project">In Development</div>
-      <div class="project">In Development</div>
-      <div class="project">In Development</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
+      <div class="project">{{ EN ? "In development" : "En desarrollo" }}</div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const EN = ref(true);
+const props = defineProps(["Language"]);
+watch(props, () => {
+  EN.value = props.Language;
+});
+</script>
 
 <style scoped>
 .sub-title {

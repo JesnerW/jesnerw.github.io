@@ -5,8 +5,8 @@
     </div>
     <div class="info">
       <div class="info-1">
-        <h1>{{ info.name }}</h1>
-        <p>{{ info.profession }}</p>
+        <h1>{{ name }}</h1>
+        <p>{{ EN ? professionEN : professionES }}</p>
         <div class="social-icon">
           <Icon
             name="uiw:linkedin"
@@ -31,12 +31,12 @@
       <div class="separador"></div>
       <div class="info-2">
         <div class="email">
-          <h4>Correo electrónico</h4>
-          <p>{{ info.email }}</p>
+          <h4>{{ EN ? "E-mail" : "Correo electrónico" }}</h4>
+          <p>{{ email }}</p>
         </div>
         <div class="location">
-          <h4>Ubicación</h4>
-          <p>{{ info.location }}</p>
+          <h4>{{ EN ? "Location" : "Ubicación" }}</h4>
+          <p>{{ location }}</p>
         </div>
       </div>
     </div>
@@ -45,19 +45,24 @@
 
 <script setup lang="ts">
 import perfilIMG from "@/assets/photo-perfil.jpg";
+
+const EN = ref(true);
+const props = defineProps(["Language"]);
+//Data
+const name = ref("Jesner Ramirez Cueva");
+const email = ref("jesner631@gmail.com");
+const location = ref("Peru");
+const professionES = ref("Desarrollador Full Stack");
+const professionEN = ref("Full Stack Developer");
+
 const social = {
   LinkedIn: "https://www.linkedin.com/in/jesnerw",
   GitHub: "https://github.com/JesnerW",
   Hackerrank: "https://www.hackerrank.com/profile/jesner631",
 };
-
-const info = {
-  name: "Jesner Ramirez Cueva",
-  profession: "Full Stack Developer",
-  email: "jesner631@gmail.com",
-  location: "Peru, Barranca",
-};
-
+watch(props, () => {
+  EN.value = props.Language;
+});
 function redirection(url: string) {
   window.open(url, "_blank");
 }

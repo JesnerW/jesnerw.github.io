@@ -3,34 +3,45 @@
     <div class="card-experience">
       <div class="sub-title">
         <Icon name="ph:briefcase" size="30px" class="icon" />
-        <h2>Experiencia</h2>
+        <h2>{{ EN ? "Experience" : "Experiencia" }}</h2>
       </div>
       <div class="list circle">
-        <h3>Desarrollador Frontend</h3>
-        <p>Enero 2023 - <span>Present</span></p>
+        <h3>
+          {{ EN ? "Frontend Developer" : "Desarrollador Frontend" }}
+        </h3>
+        <p>
+          {{ EN ? "January" : "Enero" }} 2023 -
+          <span>{{ EN ? "Present" : "Presente" }}</span>
+        </p>
         <p>Freelance</p>
       </div>
     </div>
     <div class="card-education">
       <div class="sub-title">
         <Icon name="cil:education" size="30px" class="icon" />
-        <h2>Educación</h2>
+        <h2>{{ EN ? "Education" : "Educación" }}</h2>
       </div>
       <div class="list line circle">
         <h3>Soy Henry</h3>
-        <p>Mayo 2022 - Diciembre 2022</p>
-        <p>Desarrollador Full Stack</p>
+        <p>
+          {{ EN ? "May" : "Mayo" }} 2022 -
+          {{ EN ? "December" : "Diciembre" }} 2022
+        </p>
+        <p>{{ EN ? "Full Stack Developer" : "Desarrollador Full Stack" }}</p>
       </div>
       <div class="list circle">
         <h3>Universidad San Pedro</h3>
-        <p>Enero 2012 - Diciembre 2018</p>
-        <p>Ingeniería de Sistemas</p>
+        <p>
+          {{ EN ? "January" : "Enero" }} 2012 -
+          {{ EN ? "December" : "Diciembre" }} 2018
+        </p>
+        <p>{{ EN ? "Systems Engineering" : "Ingeniería de Sistemas" }}</p>
       </div>
     </div>
     <div class="card-skill">
       <div class="sub-title">
         <Icon name="iconoir:developer" size="30px" class="icon" />
-        <h2>Skill</h2>
+        <h2>{{ EN ? "Skill" : "Habilidades técnicas" }}</h2>
       </div>
       <div class="container-skill">
         <div class="skill">
@@ -134,7 +145,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const EN = ref(true);
+const props = defineProps(["Language"]);
+watch(props, () => {
+  EN.value = props.Language;
+});
+</script>
 
 <style scoped>
 .container-skill {

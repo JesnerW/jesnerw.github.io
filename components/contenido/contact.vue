@@ -2,50 +2,58 @@
   <div class="card-contact">
     <div class="sub-title">
       <Icon name="fluent:contact-card-28-regular" size="30px" class="icon" />
-      <h2>Contact</h2>
+      <h2>{{ EN ? "Contact" : "Contacto" }}</h2>
     </div>
     <div class="form">
       <p>
-        Estoy buscando oportunidades para colaborar con
-        empresas/agencias/individuos, no solo trabajar para ellos. Quiero
-        aportar mi experiencia en un grupo colectivo donde podamos trabajar
-        juntos para resolver problemas comerciales reales de una manera que
-        optimice toda nuestra experiencia y conocimientos respectivos.
+        {{
+          EN
+            ? "I am looking for opportunities to collaborate with companies / agencies / individuals, not just work for them. I want to bring my experience into a collective group where we can work together to solve real business  together to solve real business problems in a way that optimizes all of our respective optimizes all of our respective experience and expertise."
+            : "Estoy buscando oportunidades para colaborar con empresas / agencias / individuos, no solo trabajar para ellos. Quiero aportar mi experiencia en un grupo colectivo donde podamos trabajar juntos para resolver problemas comerciales reales de una manera que optimice toda nuestra experiencia y conocimientos respectivos."
+        }}
       </p>
-      <p>No dude en comunicarse a través de este formulario.</p>
+      <p>
+        {{
+          EN
+            ? "Don't hesitate to get in touch through this form."
+            : "No dude en comunicarse a través de este formulario."
+        }}
+      </p>
       <div class="inputs">
         <input
           v-model="form.from_name"
           type="text"
           required
-          placeholder="Nombre"
+          :placeholder="EN ? 'Name' : 'Nombre'"
           class="input"
         />
         <input
           v-model="form.email_id"
           type="text"
           required
-          placeholder="Correo electrónico"
+          :placeholder="EN ? 'E-mail' : 'Correo electrónico'"
           class="input"
         />
       </div>
       <textarea
         v-model="form.message"
         required
-        placeholder="Mensaje"
+        :placeholder="EN ? 'Message' : 'Mensaje'"
         class="input"
         style="height: 145px"
       />
     </div>
     <button @click="sendEmail">
       <Icon name="mingcute:send-fill" size="25px" class="icon" />
-      Enviar mensaje
+      {{ EN ? "Send message" : "Enviar mensaje" }}
     </button>
 
     <div class="content-alert" :class="showAlert ? 'alert-enter' : ''">
       <div class="alert" :class="showAlert ? 'alert-enter' : ''">
         {{ messageAlert }}
-        <button @click="showAlert = false">Cerrar</button>
+        <button @click="showAlert = false">
+          {{ EN ? "Close" : "Cerrar" }}
+        </button>
       </div>
     </div>
   </div>
@@ -54,6 +62,8 @@
 <script setup>
 import axios from "axios";
 
+const EN = ref(true);
+const props = defineProps(["Language"]);
 const config = useRuntimeConfig();
 const showAlert = ref(false);
 const form = ref({
@@ -62,11 +72,13 @@ const form = ref({
   message: "",
 });
 const messageAlert = ref("");
-
+watch(props, () => {
+  EN.value = props.Language;
+});
 var data = {
   service_id: config.public.serviceId,
   template_id: config.public.templateId,
-  user_id: config.public.publicKeyoi,
+  user_id: config.public.publicKey,
   template_params: form.value,
 };
 
@@ -89,14 +101,17 @@ function limpiarCampos() {
 
 function AlertSuccess() {
   limpiarCampos();
-  messageAlert.value = "Mensaje enviado satisfactoriamente";
+  messageAlert.value = EN.value
+    ? "Message sent successfully"
+    : "Mensaje enviado satisfactoriamente";
   showAlert.value = true;
 }
 
 function AlertError() {
   limpiarCampos();
-  messageAlert.value =
-    "Hubo un problema al enviar el mensaje, intente usar otro método de contacto por favor";
+  messageAlert.value = EN
+    ? "There was a problem sending the message, please try another method of contact."
+    : "Hubo un problema al enviar el mensaje, intente usar otro método de contacto por favor";
   showAlert.value = true;
 }
 </script>
