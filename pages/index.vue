@@ -173,7 +173,6 @@ function languageMode(mode: string) {
   }
 }
 </script>
-
 <style scoped>
 .cursor-container {
   position: fixed;
@@ -208,8 +207,6 @@ function languageMode(mode: string) {
   }
   .button-right {
     border-radius: 0 30px 30px 0;
-  }
-  .icon {
   }
   .icon-dark {
     color: var(--icon-dark);

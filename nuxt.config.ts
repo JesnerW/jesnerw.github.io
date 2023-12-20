@@ -2,8 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    baseURL: '/portfolio/', // baseURL: '/<repository>/'
-    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+    baseURL: '/',
   },
   runtimeConfig: {
     public: {
@@ -12,6 +11,6 @@ export default defineNuxtConfig({
       publicKey: ""
     }
   },
-  css: ['./assets/app.css'],
+  css: ['~/assets/css/main.css'],
   modules: ['nuxt-icon', '@nuxtjs/color-mode'],
 })
