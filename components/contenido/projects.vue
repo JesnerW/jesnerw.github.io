@@ -56,4 +56,26 @@ watch(props, () => {
     color: var(--text-project);
   }
 }
+@media (width < 992px) {
+  .list-projects {
+    grid-template-columns: 1fr 1fr;
+    .project {
+      height: 200px;
+    }
+  }
+}
+@media (width < 500px) {
+  .list-projects {
+    .project {
+      height: 160px;
+    }
+  }
+}
+@media (width < 400px) {
+  .list-projects {
+    .project {
+      height: 140px;
+    }
+  }
+}
 </style>

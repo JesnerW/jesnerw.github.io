@@ -14,7 +14,7 @@
   --font-size-p-menu: 18px;
   --font-size-p-formulario: 20px;
 
-  --font-size-card-Projects: 38px;
+  --font-size-card-Projects: 32px;
 }
 
 .dark-mode body {
@@ -222,25 +222,23 @@ body::-webkit-scrollbar-thumb {
     --font-size-p-content: 18px;
     --font-size-p-menu: 16px;
     --font-size-p-formulario: 18px;
-
-    --font-size-card-Projects: 20px;
   }
 }
 @media (width < 600px) {
   :root {
     --font-size-h2: 24px;
     --font-size-h3: 20px;
-    --font-size-h3-experience: 18px;
-    --font-size-p-stack: 20px;
+    --font-size-h3-experience: 20px;
+    --font-size-p-stack: 22px;
 
-    --font-size-h4: 18px;
-    --font-size-p-h4: 18px;
+    --font-size-h4: 20px;
+    --font-size-p-h4: 20px;
 
-    --font-size-p-content: 16px;
+    --font-size-p-content: 18px;
     --font-size-p-menu: 14px;
-    --font-size-p-formulario: 16px;
+    --font-size-p-formulario: 18px;
 
-    --font-size-card-Projects: 16px;
+    --font-size-card-Projects: 26px;
   }
 }
 
@@ -253,15 +251,7 @@ body::-webkit-scrollbar-thumb {
   :root {
     --font-size-h1: 28px;
     --font-size-h2: 22px;
-    --font-size-h3: 18px;
-    --font-size-h3-experience: 16px;
-
-    --font-size-p-stack: 18px;
-
-    --font-size-p-content: 14px;
     --font-size-p-menu: 12px;
-    --font-size-p-formulario: 14px;
-
-    --font-size-card-Projects: 14px;
+    --font-size-card-Projects: 20px;
   }
 }

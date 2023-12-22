@@ -176,7 +176,8 @@ button {
   background-color: var(--background-input);
   border-radius: 15px;
   border: 1px solid var(--border-input);
-  font-size: 20px;
+  font-size: var(--font-size-p-formulario);
+
   box-sizing: border-box;
   width: 100%;
   resize: none;
@@ -214,7 +215,6 @@ button {
   .inputs {
     display: flex;
     gap: 25px;
-    font-size: var(--font-size-p-formulario);
   }
   .sub-title {
     margin: 12px 0;
@@ -229,6 +229,14 @@ button {
       margin-top: 3px;
       color: var(--color-icon);
     }
+  }
+}
+@media (width < 600px) {
+  .input {
+    padding: 10px 15px;
+  }
+  button {
+    padding: 8px 20px 10px 20px;
   }
 }
 </style>

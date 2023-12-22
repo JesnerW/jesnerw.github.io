@@ -184,6 +184,7 @@ function redirection(url: string) {
       flex-direction: column;
       width: 100%;
       .info-1 {
+        text-align: center;
         align-items: center;
         gap: 15px;
       }

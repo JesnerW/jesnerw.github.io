@@ -122,9 +122,14 @@ onMounted(() => {
   window.addEventListener("mouseout", () => {
     cursorVisible.value = false;
   });
-  loading.value = false;
-});
 
+  loading.value = false;
+
+  useHead({
+    title: `Jesner Ramirez - ${EN.value ? "About" : "Sobre mi"}`,
+    htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+  });
+});
 const showContent = ref({
   about: true,
   experience: false,
@@ -139,6 +144,10 @@ function contact() {
     contact: true,
     projects: false,
   };
+  useHead({
+    title: `Jesner Ramirez - ${EN.value ? "Contact" : "Contacto"}`,
+    htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+  });
 }
 function experiencia() {
   showContent.value = {
@@ -147,6 +156,10 @@ function experiencia() {
     contact: false,
     projects: false,
   };
+  useHead({
+    title: `Jesner Ramirez - ${EN.value ? "Experience" : "Experiencia"}`,
+    htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+  });
 }
 function projects() {
   showContent.value = {
@@ -155,6 +168,10 @@ function projects() {
     contact: false,
     projects: true,
   };
+  useHead({
+    title: `Jesner Ramirez - ${EN.value ? "Projects" : "Proyectos"}`,
+    htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+  });
 }
 function about() {
   showContent.value = {
@@ -163,6 +180,10 @@ function about() {
     contact: false,
     projects: false,
   };
+  useHead({
+    title: `Jesner Ramirez - ${EN.value ? "About" : "Sobre mi"}`,
+    htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+  });
 }
 function themeMode(mode: string) {
   colorMode.preference = mode;
@@ -174,6 +195,28 @@ function languageMode(mode: string) {
   } else {
     EN.value = false;
     window.localStorage.setItem("LANG", "ES");
+  }
+
+  if (showContent.value.about) {
+    useHead({
+      title: `Jesner Ramirez - ${EN.value ? "About" : "Sobre mi"}`,
+      htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+    });
+  } else if (showContent.value.experience) {
+    useHead({
+      title: `Jesner Ramirez - ${EN.value ? "Experience" : "Experiencia"}`,
+      htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+    });
+  } else if (showContent.value.projects) {
+    useHead({
+      title: `Jesner Ramirez - ${EN.value ? "Projects" : "Proyectos"}`,
+      htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+    });
+  } else if (showContent.value.contact) {
+    useHead({
+      title: `Jesner Ramirez - ${EN.value ? "Contact" : "Contacto"}`,
+      htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+    });
   }
 }
 </script>
@@ -301,6 +344,11 @@ footer {
       grid-template-columns: 1fr;
       gap: 15px;
     }
+  }
+}
+@media (width < 450px) {
+  .container {
+    top: 115px;
   }
 }
 </style>
