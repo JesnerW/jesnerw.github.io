@@ -165,7 +165,7 @@ watch(props, () => {
   .skill {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
     font-weight: 300;
-    font-size: 20px;
+    font-size: var(--font-size-p-content);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,7 +193,7 @@ watch(props, () => {
   & h2 {
     font-weight: 600;
     color: var(--section-modal-experience);
-    font-size: 28px;
+    font-size: var(--font-size-h2);
   }
   .icon {
     margin-top: 2px;
@@ -231,12 +231,12 @@ watch(props, () => {
   line-height: 1.5;
   & h3 {
     font-weight: 400;
-    font-size: 22px;
+    font-size: var(--font-size-h3-experience);
     color: var(--text-experience);
   }
   & p {
     font-weight: 300;
-    font-size: 20px;
+    font-size: var(--font-size-p-content);
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 
     color: var(--text-experience);
@@ -245,5 +245,27 @@ watch(props, () => {
 .card-resume {
   box-sizing: border-box;
   letter-spacing: 0.4px;
+}
+
+@media (width < 800px) {
+  .container-skill {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 10px;
+  }
+}
+@media (width < 650px) {
+  .container-skill {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media (width < 500px) {
+  .container-skill {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (width < 450px) {
+  .container-skill {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menu" :class="sticky && 'sticky-abosulte'">
     <div
       class="option"
       :class="menuActive.about ? 'active' : ''"
@@ -39,7 +39,7 @@
 const EN = ref(true);
 const props = defineProps(["Language"]);
 const emit = defineEmits(["contact", "about", "experiencia", "projects"]);
-
+const sticky = ref(false);
 watch(props, () => {
   EN.value = props.Language;
 });
@@ -80,18 +80,44 @@ function contact() {
   menuActive.value.contact = true;
   emit("contact");
 }
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth < 800) {
+      if (window.scrollY > 512) {
+        sticky.value = true;
+      } else {
+        sticky.value = false;
+      }
+    }
+    if (window.innerWidth < 700) {
+      if (window.scrollY > 500) {
+        sticky.value = true;
+      } else {
+        sticky.value = false;
+      }
+    }
+  });
+});
 </script>
 
 <style scoped>
+.sticky-abosulte {
+  margin: 0 -30px;
+  box-shadow: 0 -3px 15px 0px black;
+  border-radius: 0px 0px 20px 20px !important;
+}
 .menu {
   color: var(--text-menu);
   padding: 25px;
-  height: 100%;
+  height: max-content;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
+  transition: ease-in-out 0.3s;
+  position: sticky;
+  top: 30px;
   .option {
     width: 100%;
     height: 100px;
@@ -118,7 +144,7 @@ function contact() {
     & p {
       font-family: var(--family-text);
       font-weight: 400;
-      font-size: 18px;
+      font-size: var(--font-size-p-menu);
       color: var(--text-menu);
       text-transform: uppercase;
     }
@@ -136,6 +162,31 @@ function contact() {
       & :is(p, .icon) {
         color: var(--text-menu-active);
       }
+    }
+  }
+}
+@media (width < 800px) {
+  .menu {
+    flex-direction: row;
+    top: 0px;
+    z-index: 2;
+  }
+}
+@media (width < 700px) {
+  .sticky-abosulte {
+    margin: 0 -15px;
+  }
+}
+@media (width < 600px) {
+  .sticky-abosulte {
+    margin: 0 -15px;
+  }
+  .menu {
+    flex-direction: row;
+    padding: 15px;
+    gap: 15px;
+    .option {
+      height: 90px;
     }
   }
 }

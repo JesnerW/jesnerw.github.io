@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import perfilIMG from "@/assets/photo-perfil.jpg";
+import perfilIMG from "@/assets/assets/photo-perfil.jpg";
 
 const EN = ref(true);
 const props = defineProps(["Language"]);
@@ -106,12 +106,12 @@ function redirection(url: string) {
         font-family: var(--family-text);
         color: var(--name-perfil);
         font-weight: 700;
-        font-size: 40px;
+        font-size: var(--font-size-h1);
         text-transform: uppercase;
         line-height: 0.8;
       }
       & p {
-        font-size: 20px;
+        font-size: var(--font-size-p-stack);
         font-family: var(--family-text);
         color: var(--subtitle-text-perfil);
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -143,7 +143,7 @@ function redirection(url: string) {
       justify-content: space-between;
       & :is(.email, .location) {
         & h4 {
-          font-size: 20px;
+          font-size: var(--font-size-h4);
           margin-bottom: 4px;
           color: var(--subtitle-perfil);
           font-family: var(--family-text);
@@ -153,12 +153,47 @@ function redirection(url: string) {
         }
         & p {
           text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-          font-size: 20px;
+          font-size: var(--font-size-p-h4);
           color: var(--subtitle-text-perfil);
           font-family: var(--family-text);
           font-weight: 300;
           line-height: 0.9;
         }
+      }
+    }
+  }
+}
+@media (width < 1060px) {
+  .perfil {
+    .info {
+      .info-2 {
+        flex: 0.8;
+      }
+    }
+  }
+}
+
+@media (width < 992px) {
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    .info {
+      gap: 20px;
+      margin-top: -70px;
+      flex-direction: column;
+      width: 100%;
+      .info-1 {
+        align-items: center;
+        gap: 15px;
+      }
+      .info-2 {
+        gap: 15px;
+      }
+      .separador {
+        width: 100%;
+        height: 1px;
+        margin: 0px;
       }
     }
   }

@@ -162,7 +162,7 @@ button {
   border-radius: 20px;
   padding: 13px 25px 15px 25px;
   border: none;
-  font-size: 20px;
+  font-size: var(--font-size-p-formulario);
   display: flex;
   gap: 5px;
   align-items: center;
@@ -207,13 +207,14 @@ button {
 
     & p {
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-      font-size: 20px;
+      font-size: var(--font-size-p-formulario);
       color: var(--text-general);
     }
   }
   .inputs {
     display: flex;
     gap: 25px;
+    font-size: var(--font-size-p-formulario);
   }
   .sub-title {
     margin: 12px 0;
@@ -222,7 +223,7 @@ button {
     & h2 {
       font-weight: 600;
       color: var(--section-modal-contact);
-      font-size: 28px;
+      font-size: var(--font-size-h2);
     }
     .icon {
       margin-top: 3px;

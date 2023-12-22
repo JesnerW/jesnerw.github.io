@@ -69,7 +69,7 @@ watch(props, () => {
   letter-spacing: 0.4px;
   & > p {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-    font-size: 20px;
+    font-size: var(--font-size-p-content);
     margin: 15px 0;
     font-weight: 300;
     line-height: 1.3;
@@ -82,7 +82,7 @@ watch(props, () => {
     & h2 {
       font-weight: 600;
       color: var(--title-about);
-      font-size: 28px;
+      font-size: var(--font-size-h2);
     }
     .icon {
       margin-top: 2px;
@@ -110,14 +110,21 @@ watch(props, () => {
       & h3 {
         margin: 10px 0;
         font-weight: 500;
-        font-size: 24px;
+        font-size: var(--font-size-h3);
         color: var(--title-about);
       }
       & p {
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
         color: var(--text-about);
-        font-size: 20px;
+        font-size: var(--font-size-p-content);
       }
+    }
+  }
+}
+@media (width < 992px) {
+  .card-about {
+    .cards {
+      flex-direction: column;
     }
   }
 }

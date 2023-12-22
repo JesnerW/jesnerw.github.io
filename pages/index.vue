@@ -82,7 +82,6 @@
           :-language="EN"
         />
       </div>
-      <!-- <footer></footer> -->
     </div>
   </main>
 </template>
@@ -93,12 +92,16 @@ const loading = ref(true);
 const colorMode = useColorMode();
 const cursorX = ref(0);
 const cursorY = ref(0);
-const cursorVisible = ref(true);
+const cursorVisible = ref(false);
 
 const trackCursor = (event: MouseEvent) => {
-  cursorX.value = event.clientX;
-  cursorY.value = event.clientY;
-  cursorVisible.value = true;
+  if (window.innerWidth < 800) {
+    cursorVisible.value = false;
+  } else {
+    cursorX.value = event.clientX;
+    cursorY.value = event.clientY;
+    cursorVisible.value = true;
+  }
 };
 onMounted(() => {
   const Language = window.localStorage.getItem("LANG");
@@ -115,6 +118,7 @@ onMounted(() => {
       window.localStorage.setItem("LANG", "EN");
     }
   }
+
   window.addEventListener("mouseout", () => {
     cursorVisible.value = false;
   });
@@ -173,7 +177,13 @@ function languageMode(mode: string) {
   }
 }
 </script>
+<style>
+@import url("../assets/css/main.css");
+</style>
 <style scoped>
+main {
+  margin: 0 25px 0 30px;
+}
 .cursor-container {
   position: fixed;
   height: 100vh;
@@ -190,10 +200,12 @@ function languageMode(mode: string) {
 }
 .options {
   position: absolute;
-  right: 15px;
+  right: 0px;
   top: 15px;
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
+  width: 100%;
   .linea {
     display: flex;
   }
@@ -239,21 +251,55 @@ footer {
   flex-direction: column;
   gap: 30px;
   .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 162px 1fr;
     gap: 30px;
     .menu {
       background-color: var(--background-cards);
-      width: 15%;
       border-radius: 20px;
     }
     .contenido {
-      width: 85%;
-      height: 100%;
       border-radius: 20px;
       background-color: var(--background-cards);
       margin-bottom: 40px;
       padding: 18px 30px 30px 30px;
       box-sizing: border-box;
+    }
+  }
+}
+@media (width < 740px) {
+  .options {
+    justify-content: space-between;
+  }
+}
+@media (width < 700px) {
+  main {
+    margin: 0 10px 0 15px;
+  }
+}
+@media (width < 800px) {
+  .container {
+    .content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+}
+@media (width < 600px) {
+  .container {
+    .content {
+      .contenido {
+        padding: 8px 20px 20px 20px;
+      }
+    }
+  }
+}
+@media (width < 700px) {
+  .container {
+    gap: 15px;
+    .content {
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
   }
 }

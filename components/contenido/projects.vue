@@ -31,7 +31,7 @@ watch(props, () => {
   & h2 {
     font-weight: 600;
     color: var(--section-modal-project);
-    font-size: 28px;
+    font-size: var(--font-size-h2);
   }
   .icon {
     margin-top: 2px;
@@ -52,7 +52,7 @@ watch(props, () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: var(--font-size-card-Projects);
     color: var(--text-project);
   }
 }
