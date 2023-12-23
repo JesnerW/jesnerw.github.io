@@ -13,7 +13,7 @@
     </div>
 
     <div class="options">
-      <div class="language linea">
+      <div class="linea">
         <div
           class="button-left"
           :class="{ active: !EN && !loading }"
@@ -29,7 +29,7 @@
           <Icon name="circle-flags:us-um" size="27px" class="icon" />
         </div>
       </div>
-      <div class="theme linea">
+      <div class="linea">
         <div
           class="button-left"
           :class="{
@@ -242,7 +242,7 @@ main {
 
 .cursor-light {
   position: fixed;
-  box-shadow: 0 0 100px 35px rgb(42 211 0 / 72%);
+  box-shadow: 0 0 100px 45px var(--shadow-cursor);
   border-radius: 50%;
   pointer-events: none;
   z-index: -50;
@@ -258,6 +258,8 @@ main {
   width: 100%;
   .linea {
     display: flex;
+    border-radius: 30px;
+    box-shadow: 1px 2px 4px 0px var(--shadow-cards);
   }
   & :is(.button-left, .button-right) {
     padding: 12px 18px;
@@ -307,6 +309,7 @@ footer {
     .menu {
       background-color: var(--background-cards);
       border-radius: 20px;
+      box-shadow: 1px 2px 4px 0px var(--shadow-cards);
     }
     .contenido {
       border-radius: 20px;
@@ -314,6 +317,7 @@ footer {
       margin-bottom: 40px;
       padding: 18px 30px 30px 30px;
       box-sizing: border-box;
+      box-shadow: 1px 2px 4px 0px var(--shadow-cards);
     }
   }
 }

@@ -82,12 +82,15 @@ function redirection(url: string) {
   padding: 30px 30px;
   box-sizing: border-box;
   letter-spacing: 0.8px;
+  box-shadow: 1px 2px 4px 0px var(--shadow-cards);
+
   .photo {
     position: relative;
     top: -70px;
     width: 150px;
     height: 150px;
     border: 4px var(--background-cards) solid;
+    box-shadow: 0px -3px 10px -2px var(--shadow-cards);
     overflow: hidden;
     border-radius: 20%;
     & img {

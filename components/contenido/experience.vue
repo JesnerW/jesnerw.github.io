@@ -41,7 +41,7 @@
     <div class="card-skill">
       <div class="sub-title">
         <Icon name="iconoir:developer" size="30px" class="icon" />
-        <h2>{{ EN ? "Skill" : "Habilidades técnicas" }}</h2>
+        <h2>{{ EN ? "Skills" : "Habilidades técnicas" }}</h2>
       </div>
       <div class="container-skill">
         <div class="skill">

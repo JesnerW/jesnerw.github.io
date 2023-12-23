@@ -25,6 +25,9 @@
     rgba(7, 7, 8, 1) 100%
   );
 
+  /*Cursor-light*/
+  --shadow-cursor: rgb(255 255 255 / 100%);
+
   /*Option CSS (dark-light)*/
   --background-button-mode: #222;
   --icon-dark: #000;
@@ -34,6 +37,7 @@
 
   /*CARD (PERFIL, MENU, CONTENT)*/
   --background-cards: #222222;
+  --shadow-cards: #00000070;
 
   /*Icon*/
   --color-icon: #ffd500;
@@ -100,6 +104,9 @@
     rgb(184, 184, 184) 110%
   );
 
+  /*Cursor-light*/
+  --shadow-cursor: rgb(255 213 0);
+
   /*Option CSS (dark-light)*/
   --background-button-mode: rgba(255, 255, 255, 0.7);
   --icon-dark: #151515;
@@ -109,6 +116,7 @@
 
   /*CARD (PERFIL, MENU, CONTENT)*/
   --background-cards: #fff;
+  --shadow-cards: #0000002b;
 
   /*Icon*/
   --color-icon: #0d86ff;
