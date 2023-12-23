@@ -128,6 +128,13 @@ onMounted(() => {
   useHead({
     title: `Jesner Ramirez - ${EN.value ? "About" : "Sobre mi"}`,
     htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },
+    meta: [
+      {
+        name: "description",
+        content:
+          "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio",
+      },
+    ],
   });
 });
 const showContent = ref({

@@ -1,7 +1,12 @@
 <template>
   <div class="perfil">
     <div class="photo">
-      <img :src="perfilIMG" alt="" />
+      <NuxtImg
+        src="/photo-perfil.jpg"
+        width="150"
+        height="150"
+        alt="foto de perfil"
+      />
     </div>
     <div class="info">
       <div class="info-1">
@@ -31,11 +36,11 @@
       <div class="separador"></div>
       <div class="info-2">
         <div class="email">
-          <h4>{{ EN ? "E-mail" : "Correo electrónico" }}</h4>
+          <p class="subtitle">{{ EN ? "E-mail" : "Correo electrónico" }}</p>
           <p>{{ email }}</p>
         </div>
         <div class="location">
-          <h4>{{ EN ? "Location" : "Ubicación" }}</h4>
+          <p class="subtitle">{{ EN ? "Location" : "Ubicación" }}</p>
           <p>{{ location }}</p>
         </div>
       </div>
@@ -44,8 +49,6 @@
 </template>
 
 <script setup lang="ts">
-import perfilIMG from "@/assets/assets/photo-perfil.jpg";
-
 const EN = ref(true);
 const props = defineProps(["Language"]);
 //Data
@@ -142,7 +145,7 @@ function redirection(url: string) {
       flex-direction: column;
       justify-content: space-between;
       & :is(.email, .location) {
-        & h4 {
+        .subtitle {
           font-size: var(--font-size-h4);
           margin-bottom: 4px;
           color: var(--subtitle-perfil);
