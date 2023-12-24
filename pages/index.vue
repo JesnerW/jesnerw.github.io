@@ -104,6 +104,24 @@ const trackCursor = (event: MouseEvent) => {
     cursorVisible.value = true;
   }
 };
+
+//SEO
+useSeoMeta({
+  ogTitle: "Jesner Ramirez",
+  ogUrl: "https://www.jesner.me/",
+  ogType: "profile",
+  ogDescription:
+    "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio.",
+  ogImage: "https://www.jesner.me/my_page.png",
+  description:
+    "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio.",
+  twitterCard: "summary_large_image",
+  twitterDescription:
+    "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio.",
+  twitterImage: "https://www.jesner.me/my_page.png",
+  twitterTitle: "Jesner Ramirez",
+});
+
 onMounted(() => {
   const Language = window.localStorage.getItem("LANG");
   if (!Language) {
@@ -133,7 +151,7 @@ onMounted(() => {
       {
         name: "description",
         content:
-          "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio",
+          "Conoce mi trayectoria como Desarrollador full stack con amplia experiencia en frontend a través de mi portfolio.",
       },
     ],
   });
@@ -144,7 +162,8 @@ const showContent = ref({
   projects: false,
   contact: false,
 });
-var limpiarCampos: Function;
+
+var limpiarCampos: Function; //Se guarda la funcion limpiar-campos en una variable.
 
 function limpiar(funct_Clean: Function) {
   limpiarCampos = funct_Clean;
