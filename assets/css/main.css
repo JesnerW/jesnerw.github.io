@@ -95,6 +95,8 @@
   --text-contact: #484848;
   --outline-input: #484848;
   --text-general: #fff;
+  --text-required: #ffffff;
+  --text-required-shadow: rgba(0, 0, 0, 0.5);
 }
 
 .light-mode body {
@@ -174,6 +176,8 @@
   --border-input: rgba(0, 0, 0, 0.3);
   --outline-input: rgba(0, 0, 0, 0.4);
   --text-general: rgba(0, 0, 0, 0.85);
+  --text-required: #ff0000;
+  --text-required-shadow: rgba(255, 0, 0, 0.5);
 }
 
 * {

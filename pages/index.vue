@@ -80,6 +80,7 @@
           v-show="showContent.contact"
           class="contenido"
           :-language="EN"
+          @limpiar-campos="limpiar"
         />
       </div>
     </div>
@@ -143,6 +144,11 @@ const showContent = ref({
   projects: false,
   contact: false,
 });
+var limpiarCampos: Function;
+
+function limpiar(funct_Clean: Function) {
+  limpiarCampos = funct_Clean;
+}
 
 function contact() {
   showContent.value = {
@@ -151,6 +157,7 @@ function contact() {
     contact: true,
     projects: false,
   };
+  limpiarCampos();
   useHead({
     title: `Jesner Ramirez - ${EN.value ? "Contact" : "Contacto"}`,
     htmlAttrs: { lang: `${EN.value ? "EN" : "ES"}` },

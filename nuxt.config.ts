@@ -11,5 +11,5 @@ export default defineNuxtConfig({
       publicKey: ""
     }
   },
-  modules: ['nuxt-icon', '@nuxtjs/color-mode', '@nuxt/image'],
+  modules: ['nuxt-icon', '@nuxtjs/color-mode', '@nuxt/image', '@vee-validate/nuxt'],
 })
