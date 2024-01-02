@@ -205,6 +205,7 @@ onMounted(() => {
 
 <style scoped>
 .submit {
+  margin-bottom: 30px;
   display: flex;
   gap: 10px;
   align-items: center;

@@ -93,6 +93,7 @@ watch(props, () => {
     display: flex;
     gap: 25px;
     margin-top: 15px;
+    margin-bottom: 30px;
     .card {
       line-height: 1.3;
       font-weight: 200;

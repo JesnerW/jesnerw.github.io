@@ -1,5 +1,5 @@
 <template>
-  <div class="menu" :class="sticky && 'sticky-abosulte'">
+  <nav class="menu" :class="sticky ? 'sticky-abosulte' : ''">
     <div
       class="option"
       :class="menuActive.about ? 'active' : ''"
@@ -32,7 +32,7 @@
       <Icon name="streamline:contact-phonebook-2" size="40px" class="icon" />
       <p>{{ EN ? "Contact" : "Contacto" }}</p>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -80,23 +80,21 @@ function contact() {
   menuActive.value.contact = true;
   emit("contact");
 }
+
+function handleScrollAndResize() {
+  if (window.innerWidth >= 800) {
+    sticky.value = false;
+  }
+  if (window.innerWidth < 800 && window.scrollY > 512) {
+    sticky.value = true;
+  } else {
+    sticky.value = false;
+  }
+}
+
 onMounted(() => {
-  window.addEventListener("scroll", () => {
-    if (window.innerWidth < 800) {
-      if (window.scrollY > 512) {
-        sticky.value = true;
-      } else {
-        sticky.value = false;
-      }
-    }
-    if (window.innerWidth < 700) {
-      if (window.scrollY > 500) {
-        sticky.value = true;
-      } else {
-        sticky.value = false;
-      }
-    }
-  });
+  window.addEventListener("resize", handleScrollAndResize);
+  window.addEventListener("scroll", handleScrollAndResize);
 });
 </script>
 

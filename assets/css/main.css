@@ -14,7 +14,7 @@
   --font-size-p-menu: 18px;
   --font-size-p-formulario: 20px;
 
-  --font-size-card-Projects: 32px;
+  --font-size-card-Projects: 16px;
 }
 
 .dark-mode body {
@@ -24,6 +24,10 @@
     rgba(28, 28, 29, 1) 0%,
     rgba(7, 7, 8, 1) 100%
   );
+
+  /*color scroll*/
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #5f5f5f;
 
   /*Cursor-light*/
   --shadow-cursor: rgb(255 255 255 / 100%);
@@ -84,7 +88,7 @@
   /*Projects*/
   --section-modal-project: #fff;
   --text-project: #fff;
-  --box-project: #2f2f2f;
+  --box-project: #eee;
 
   /*Contact*/
   --section-modal-contact: #fff;
@@ -105,6 +109,10 @@
     rgb(255, 255, 255) 0%,
     rgb(184, 184, 184) 110%
   );
+
+  /*color scroll*/
+  --sb-track-color: #eeeeee;
+  --sb-thumb-color: #d2d2d2;
 
   /*Cursor-light*/
   --shadow-cursor: rgb(255 213 0);
@@ -188,12 +196,14 @@
 }
 
 body {
+  overflow-x: clip;
+
   min-height: 100vh;
   background-image: var(--body-radial);
   background-attachment: fixed;
-
-  --sb-track-color: #232e33;
-  --sb-thumb-color: #5f5f5f;
+  /*color scroll*/
+  --sb-track-color1: #232e33;
+  --sb-thumb-color1: #5f5f5f;
   --sb-size: 5px;
   scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   margin-right: 5px;
@@ -204,12 +214,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
+  background: var(--sb-track-color1);
   border-radius: 0px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
+  background: var(--sb-thumb-color1);
   border-radius: 0px;
 }
 

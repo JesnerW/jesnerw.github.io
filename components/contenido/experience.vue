@@ -156,8 +156,8 @@ watch(props, () => {
 <style scoped>
 .container-skill {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin: 20px 5px 10px 5px;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 20px 5px 35px 5px;
   padding: 10px 10px;
   border-radius: 20px;
   border: 2px var(--line-box-skill) solid;
@@ -238,7 +238,6 @@ watch(props, () => {
     font-weight: 300;
     font-size: var(--font-size-p-content);
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-
     color: var(--text-experience);
   }
 }
@@ -246,26 +245,27 @@ watch(props, () => {
   box-sizing: border-box;
   letter-spacing: 0.4px;
 }
-
-@media (width < 800px) {
+@media (width < 950px) {
   .container-skill {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     gap: 5px 10px;
   }
 }
-@media (width < 650px) {
+@media (width < 850px) {
   .container-skill {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px 10px;
   }
 }
+
 @media (width < 500px) {
   .container-skill {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (width < 450px) {
   .container-skill {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

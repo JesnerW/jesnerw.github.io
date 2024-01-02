@@ -261,6 +261,8 @@ main {
   margin: 0 25px 0 30px;
 }
 .cursor-container {
+  left: 0px;
+
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -341,7 +343,7 @@ footer {
       border-radius: 20px;
       background-color: var(--background-cards);
       margin-bottom: 40px;
-      padding: 18px 30px 30px 30px;
+      padding: 30px 30px 0px 30px;
       box-sizing: border-box;
       box-shadow: 1px 2px 4px 0px var(--shadow-cards);
     }
