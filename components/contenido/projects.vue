@@ -12,9 +12,21 @@
           </div>
           <div class="description">
             <section>
+              <Icon name="mingcute:up-line" size="30px" class="icon" />
               <h3>{{ EN ? item.titleEN : item.titleES }}</h3>
               <div class="actions">
-                <button @click="showPage(item.url)">Abrir modal</button>
+                <button @click="openGitHub(item.urlGitHub)">
+                  <Icon name="mdi:github" size="25px" class="iconAction" />
+                  GitHub
+                </button>
+                <button @click="openPage(item.url)">
+                  <Icon
+                    name="mdi:view-arrow-right-outline"
+                    size="25px"
+                    class="iconAction"
+                  />
+                  {{ EN ? "Visit page" : "Visitar pagina" }}
+                </button>
               </div>
             </section>
           </div>
@@ -23,7 +35,7 @@
     </div>
     <div>
       <div class="sub-title">
-        <Icon name="octicon:project-symlink-24" size="30px" class="icon" />
+        <Icon name="mdi:design" size="30px" class="icon" />
         <h2>
           {{
             EN ? "Design and style challenges" : "Desafíos de diseño y estilos"
@@ -37,9 +49,21 @@
           </div>
           <div class="description">
             <section>
+              <Icon name="mingcute:up-line" size="30px" class="icon" />
               <h3>{{ EN ? item.titleEN : item.titleES }}</h3>
               <div class="actions">
-                <button @click="showPage(item.url)">Abrir modal</button>
+                <button @click="openGitHub(item.urlGitHub)">
+                  <Icon name="mdi:github" size="25px" class="iconAction" />
+                  GitHub
+                </button>
+                <button @click="openPage(item.url)">
+                  <Icon
+                    name="mdi:view-arrow-right-outline"
+                    size="25px"
+                    class="iconAction"
+                  />
+                  {{ EN ? "Visit page" : "Visitar pagina" }}
+                </button>
               </div>
             </section>
           </div>
@@ -77,6 +101,12 @@ function showPage(url: string) {
   showModal.value = true;
   document.body.style.overflow = "hidden";
 }
+function openGitHub(url: string) {
+  window.open(url);
+}
+function openPage(url: string) {
+  window.open(url);
+}
 </script>
 
 <style scoped>
@@ -102,7 +132,7 @@ function showPage(url: string) {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   padding-top: 2px;
-  max-height: 540px;
+  max-height: 513px;
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: var(--sb-size);
@@ -124,10 +154,9 @@ function showPage(url: string) {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px #f0f0f0 solid;
+    border: 1px var(--box-border-project) solid;
     background-color: var(--box-project);
-    padding-bottom: 60px;
-
+    padding-bottom: 48px;
     .imagen {
       display: flex;
       width: 100%;
@@ -160,11 +189,14 @@ function showPage(url: string) {
     }
     .description {
       position: absolute;
-      background-color: rgb(255, 255, 255);
+      background-color: var(--background-description-project);
       width: 100%;
-      height: 120px;
+      height: 108px;
       bottom: -60px;
       border-radius: 15px;
+      transition: height ease-in-out 0.5s;
+      text-align: center;
+      color: var(--text-project);
       &::after {
         content: "";
         position: absolute;
@@ -174,7 +206,7 @@ function showPage(url: string) {
         display: block;
         right: -25px;
         border-radius: 15px;
-        box-shadow: inset -25px -25px #fff;
+        box-shadow: inset -25px -25px var(--background-description-project);
       }
       &::before {
         content: "";
@@ -185,18 +217,50 @@ function showPage(url: string) {
         display: block;
         left: -25px;
         border-radius: 15px;
-        box-shadow: inset 25px -25px #fff;
+        box-shadow: inset 25px -25px var(--background-description-project);
+      }
+      &:hover {
+        height: 155px;
       }
       & section {
-        padding-top: 5px;
+        margin-top: -2px;
         z-index: 1;
         position: relative;
         & h3 {
+          margin-top: -10px;
           text-align: center;
-          font-weight: 400;
+          font-weight: 300;
+          text-shadow: 0 0 1px var(--text-shadow-project-h3);
         }
         .actions {
-          display: none;
+          margin-top: 8px;
+          display: flex;
+          gap: 6px;
+          justify-content: center;
+          & button {
+            border: 1px solid var(--border-button-project);
+            font-size: 14.5px;
+            cursor: pointer;
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            padding: 3px 6px;
+            background: var(--background-button-project);
+            font-weight: 300;
+            text-shadow: 0 0 1px var(--text-shadow-project-button);
+            color: var(--text-project);
+            transition: ease-in-out 0.3s;
+            &:hover {
+              background: var(--background-button-hover-project);
+              color: var(--text-button-hover-project);
+              text-shadow: 0 0 1px var(--text-shadow-project-hover-button);
+              .iconAction {
+                color: var(--hover-icon-project);
+              }
+            }
+          }
         }
       }
     }

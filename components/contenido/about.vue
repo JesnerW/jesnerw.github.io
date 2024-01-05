@@ -7,15 +7,15 @@
     <p>
       {{
         EN
-          ? "My main focus is to deliver high quality technology solutions that not only meet user expectations, but exceed them."
-          : "Mi enfoque principal es entregar soluciones tecnológicas de alta calidad que no solo cumplan con las expectativas de los usuarios, sino que las superen."
+          ? "My main goal is to deliver high quality technology solutions that not only meet but exceed user expectations."
+          : "Mi objetivo principal es ofrecer soluciones tecnológicas de alta calidad que no solo cumplan con las expectativas de los usuarios, sino que las superen."
       }}
     </p>
     <p>
       {{
         EN
-          ? "I am always oriented towards professional and personal improvement, I enjoy sharing my knowledge with my colleagues. sharing my knowledge with my colleagues, as the power of working together in the same working together in the same direction makes reaching the objectives and goals more goals more effectively."
-          : "Siempre estoy orientado hacia la mejora profesional y personal, disfruto compartiendo mis conocimientos con mis compañeros, ya que el poder de trabajar juntos en una misma dirección hace que alcanzar los objetivos y metas sea de manera más efectiva."
+          ? "I always focus on work and personal improvement, and I enjoy interacting with my colleagues, since the ability to collaborate in the same direction contributes to achieve objectives and goals more effectively."
+          : "Siempre me enfoco en la mejora laboral y personal, y disfruto de la interacción con mis colegas, dado que la capacidad de colaborar en una misma dirección contribuye a alcanzar los objetivos y metas de manera más efectiva."
       }}
     </p>
     <div class="sub-title">

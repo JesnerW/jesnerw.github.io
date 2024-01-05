@@ -17,6 +17,14 @@ export const listProjectsFromDesign = [
       "https://github.com/JesnerW/Componente-de-calificacion-interactivo",
   },
   {
+    titleEN: "Equalizer landing page",
+    titleES: "Página principal de Equalizer",
+    img: "/min-img-web/equalizer-landing-page.webp",
+    toolUsign: "html + css",
+    url: "https://www.jesner.me/equalizer-landing-page/",
+    urlGitHub: "https://github.com/JesnerW/equalizer-landing-page",
+  },
+  {
     titleEN: "Skilled e-learning landing page",
     titleES: "Página principal de e-learning",
     img: "/min-img-web/skilled-e-learning-landing-page.webp",

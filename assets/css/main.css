@@ -88,7 +88,18 @@
   /*Projects*/
   --section-modal-project: #fff;
   --text-project: #fff;
-  --box-project: #eee;
+  --box-project: #6c6c6c70;
+  --box-border-project: #85858500;
+  --background-description-project: #2f2f2f;
+  --border-button-project: #6c6c6cc5;
+  --background-button-project: #00000000;
+  --background-button-hover-project: #fff;
+  --text-button-project: #fff;
+  --text-button-hover-project: #000000;
+  --text-shadow-project-button: rgba(255, 255, 255, 0.3);
+  --text-shadow-project-hover-button: rgba(4, 4, 4, 0.3);
+  --text-shadow-project-h3: rgba(255, 255, 255, 0.7);
+  --hover-icon-project: #0d86ff;
 
   /*Contact*/
   --section-modal-contact: #fff;
@@ -175,6 +186,16 @@
   --section-modal-project: rgba(0, 0, 0, 0.85);
   --text-project: rgba(0, 0, 0, 0.7);
   --box-project: #eee;
+  --box-border-project: #f0f0f0;
+  --background-description-project: #fff;
+  --border-button-project: #d8d8d8;
+  --background-button-project: #ffffff;
+  --background-button-hover-project: #eee;
+  --text-button-project: #000000;
+  --text-shadow-project-button: rgba(0, 0, 0, 0.5);
+  --text-shadow-project-hover-button: rgba(0, 0, 0, 0.7);
+  --text-shadow-project-h3: rgba(0, 0, 0, 0.7);
+  --hover-icon-project: #0d86ff;
 
   /*Contact*/
   --section-modal-contact: rgba(0, 0, 0, 0.85);
