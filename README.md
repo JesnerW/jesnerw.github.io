@@ -1,79 +1,18 @@
-# Nuxt 3 Minimal Starter
+# Porfolio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Configuracion basica necesaria para modificacion y despliegue.
 
-## Setup
+<img src="./img/page_me.png" width="900">
 
-Make sure to install the dependencies:
+### Configuracion
 
-```bash
-# npm
-npm install
+- Las instrucciones se indicara con “npm”, puede usar tambien “pnpm, yarn, bun”
+- Instalacion tipica de dependencias (npm install).
 
-# pnpm
-pnpm install
+### Modo desarrollador
 
-# yarn
-yarn install
+- Para iniciar el modo desarrollador ejecutar (npm run dev), iniciara por defecto en esta ruta `http://localhost:3000`
 
-# bun
-bun install
-```
+### Despliegue
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-
-# deploy
-npm run generate
-npm run deploy
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Para desplegar la pagina ejecutar (npm run generate) para renderizar la pagina, luego ejecutar (npm run deploy) para desplegar, los archivos generados se subiran a la rama “gh-pages”.
