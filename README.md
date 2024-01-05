@@ -1,13 +1,20 @@
 # Porfolio
 
-Configuracion basica necesaria para modificacion y despliegue.
+Configuración básica necesaria para modificación y despliegue.
 
 <img src="./img/page_me.png" width="900">
 
-### Configuracion
+### Configuración
 
-- Las instrucciones se indicara con “npm”, puede usar tambien “pnpm, yarn, bun”
-- Instalacion tipica de dependencias (npm install).
+- Las instrucciones se indicara con “npm”, puede usar también “pnpm, yarn, bun”
+- Instalación típica de dependencias (npm install).
+- Crear archivo de variables de entorno ".env" para la funcionalidad del correo.
+
+```plaintext
+NUXT_PUBLIC_SERVICE_ID=""
+NUXT_PUBLIC_TEMPLATE_ID=""
+NUXT_PUBLIC_PUBLIC_KEY=""
+```
 
 ### Modo desarrollador
 
