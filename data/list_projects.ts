@@ -148,28 +148,11 @@ export const listProjectsFromDesign = [
 
 export const listProjectsDynamic = [
   {
-    titleEN: "Social metrics panel",
-    titleES: "Panel de métricas",
-    img: "/min-img-web/social-media-dashboard.webp",
-    toolUsign: "html + css + javascript",
-    url: "https://www.jesner.me/social-media-dashboard/",
-    urlGitHub: "https://github.com/JesnerW/social-media-dashboard",
+    titleEN: "Home services",
+    titleES: "Servicios a domicilio",
+    img: "/min-img-web/jaipro.jpg",
+    toolUsign: "Vuejs",
+    url: "http://34.68.182.26:8080/",
+    urlGitHub: "https://github.com/jaipro-org/jaipro-web",
   },
-  {
-    titleEN: "Rating component",
-    titleES: "Componente de calificación",
-    img: "/min-img-web/componente-de-calificacion-interactivo.webp",
-    toolUsign: "html + css + javascript + Nuxt",
-    url: "https://www.jesner.me/Componente-de-calificacion-interactivo/",
-    urlGitHub:
-      "https://github.com/JesnerW/Componente-de-calificacion-interactivo",
-  },
-  {
-    titleEN: "Social proof section",
-    titleES: "Sección de opiniones",
-    img: "/min-img-web/social-proof-section.webp",
-    toolUsign: "html + css",
-    url: "https://www.jesner.me/Social-proof-section/",
-    urlGitHub: "https://github.com/JesnerW/Social-proof-section",
-  }
 ];
