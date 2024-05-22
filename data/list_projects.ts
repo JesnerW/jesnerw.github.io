@@ -152,7 +152,7 @@ export const listProjectsDynamic = [
     titleES: "Servicios a domicilio",
     img: "/min-img-web/jaipro.jpg",
     toolUsign: "Vuejs",
-    url: "http://34.68.182.26:8080/",
+    url: "https://jaipro.pro/",
     urlGitHub: "https://github.com/jaipro-org/jaipro-web",
   },
 ];
